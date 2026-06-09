@@ -121,8 +121,8 @@ nav {
 }
 .project-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
 
-/* CAROUSEL */
-.carousel { position: relative; background: #1E1E1E; }
+/* CARD IMAGE */
+.card-img { background: #1E1E1E; }
 .chrome-bar {
   padding: 8px 12px 6px;
   display: flex; align-items: center; gap: 5px;
@@ -131,40 +131,10 @@ nav {
 .dot-r { background: #FF5F57; }
 .dot-y { background: #FFBD2E; }
 .dot-g { background: #28CA42; }
-
-.carousel-track {
-  display: flex; overflow: hidden; transition: transform 0.3s ease;
-}
-.carousel-slide {
-  min-width: 100%; flex-shrink: 0;
-}
-.carousel-slide img {
+.card-img img {
   width: 100%; display: block;
   height: 195px; object-fit: cover; object-position: top;
 }
-
-.carousel-controls {
-  position: absolute; bottom: 8px; right: 8px;
-  display: flex; gap: 5px;
-}
-.carousel-btn {
-  background: rgba(0,0,0,0.55); border: none; cursor: pointer;
-  color: #fff; width: 24px; height: 24px; border-radius: 5px;
-  font-size: 12px; display: flex; align-items: center; justify-content: center;
-  transition: background 0.15s;
-}
-.carousel-btn:hover { background: rgba(13,148,136,0.8); }
-
-.carousel-dots {
-  position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%);
-  display: flex; gap: 4px;
-}
-.cdot {
-  width: 5px; height: 5px; border-radius: 50%;
-  background: rgba(255,255,255,0.35); cursor: pointer;
-  transition: background 0.2s;
-}
-.cdot.active { background: var(--teal); }
 
 .card-body { padding: 1.1rem 1.25rem 1.25rem; }
 .card-title { font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 0.35rem; }
@@ -257,23 +227,11 @@ footer a:hover { color: var(--teal); }
   <div class="projects-grid">
 
     <div class="project-card">
-      <div class="carousel" data-carousel>
+      <div class="card-img">
         <div class="chrome-bar">
           <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
         </div>
-        <div class="carousel-track">
-          <div class="carousel-slide"><img src="assets/ogdc-1.png" alt="OGDC overview" /></div>
-          <div class="carousel-slide"><img src="assets/ogdc-2.png" alt="OGDC statistical tests" /></div>
-          <div class="carousel-slide"><img src="assets/ogdc-3.png" alt="OGDC GARCH volatility" /></div>
-          <div class="carousel-slide"><img src="assets/ogdc-4.png" alt="OGDC moving averages" /></div>
-          <div class="carousel-slide"><img src="assets/ogdc-5.png" alt="OGDC volatility regimes" /></div>
-          <div class="carousel-slide"><img src="assets/ogdc-6.png" alt="OGDC backtesting" /></div>
-        </div>
-        <div class="carousel-dots"></div>
-        <div class="carousel-controls">
-          <button class="carousel-btn prev">&#8592;</button>
-          <button class="carousel-btn next">&#8594;</button>
-        </div>
+        <img src="assets/ogdc-1.png" alt="OGDC overview" />
       </div>
       <div class="card-body">
         <div class="card-title">OGDC Equity Analysis Platform</div>
@@ -287,20 +245,11 @@ footer a:hover { color: var(--teal); }
     </div>
 
     <div class="project-card">
-      <div class="carousel" data-carousel>
+      <div class="card-img">
         <div class="chrome-bar">
           <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
         </div>
-        <div class="carousel-track">
-          <div class="carousel-slide"><img src="assets/edumetrics-1.png" alt="EduMetrics analytics overview" /></div>
-          <div class="carousel-slide"><img src="assets/edumetrics-2.png" alt="EduMetrics item analysis" /></div>
-          <div class="carousel-slide"><img src="assets/edumetrics-3.png" alt="EduMetrics module detail" /></div>
-        </div>
-        <div class="carousel-dots"></div>
-        <div class="carousel-controls">
-          <button class="carousel-btn prev">&#8592;</button>
-          <button class="carousel-btn next">&#8594;</button>
-        </div>
+        <img src="assets/edumetrics-1.png" alt="EduMetrics analytics overview" />
       </div>
       <div class="card-body">
         <div class="card-title">EduMetrics</div>
@@ -314,25 +263,11 @@ footer a:hover { color: var(--teal); }
     </div>
 
     <div class="project-card">
-      <div class="carousel" data-carousel>
+      <div class="card-img">
         <div class="chrome-bar">
           <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
         </div>
-        <div class="carousel-track">
-          <div class="carousel-slide"><img src="assets/anomaly-1.png" alt="IoT dashboard" /></div>
-          <div class="carousel-slide"><img src="assets/anomaly-2.png" alt="IoT controls" /></div>
-          <div class="carousel-slide"><img src="assets/anomaly-3.png" alt="Anomaly time series" /></div>
-          <div class="carousel-slide"><img src="assets/anomaly-4.png" alt="Contamination sensitivity" /></div>
-          <div class="carousel-slide"><img src="assets/anomaly-5.png" alt="Severity breakdown" /></div>
-          <div class="carousel-slide"><img src="assets/anomaly-6.png" alt="Benchmark results" /></div>
-          <div class="carousel-slide"><img src="assets/anomaly-7.png" alt="Detector agreement" /></div>
-          <div class="carousel-slide"><img src="assets/anomaly-8.png" alt="LSTM autoencoder" /></div>
-        </div>
-        <div class="carousel-dots"></div>
-        <div class="carousel-controls">
-          <button class="carousel-btn prev">&#8592;</button>
-          <button class="carousel-btn next">&#8594;</button>
-        </div>
+        <img src="assets/anomaly-1.png" alt="IoT dashboard" />
       </div>
       <div class="card-body">
         <div class="card-title">IoT Sensor Anomaly Detection Pipeline</div>
@@ -345,22 +280,11 @@ footer a:hover { color: var(--teal); }
     </div>
 
     <div class="project-card">
-      <div class="carousel" data-carousel>
+      <div class="card-img">
         <div class="chrome-bar">
           <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
         </div>
-        <div class="carousel-track">
-          <div class="carousel-slide"><img src="assets/devmetrics-1.png" alt="DevMetrics dashboard" /></div>
-          <div class="carousel-slide"><img src="assets/devmetrics-2.png" alt="DevMetrics craftsmanship" /></div>
-          <div class="carousel-slide"><img src="assets/devmetrics-3.png" alt="DevMetrics repositories" /></div>
-          <div class="carousel-slide"><img src="assets/devmetrics-4.png" alt="DevMetrics snapshot history" /></div>
-          <div class="carousel-slide"><img src="assets/devmetrics-5.png" alt="DevMetrics Prometheus" /></div>
-        </div>
-        <div class="carousel-dots"></div>
-        <div class="carousel-controls">
-          <button class="carousel-btn prev">&#8592;</button>
-          <button class="carousel-btn next">&#8594;</button>
-        </div>
+        <img src="assets/devmetrics-1.png" alt="DevMetrics dashboard" />
       </div>
       <div class="card-body">
         <div class="card-title">DevMetrics</div>
@@ -373,21 +297,11 @@ footer a:hover { color: var(--teal); }
     </div>
 
     <div class="project-card">
-      <div class="carousel" data-carousel>
+      <div class="card-img">
         <div class="chrome-bar">
           <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
         </div>
-        <div class="carousel-track">
-          <div class="carousel-slide"><img src="assets/relaycore-4.png" alt="RelayCore main dashboard" /></div>
-          <div class="carousel-slide"><img src="assets/relaycore-1.png" alt="RelayCore webhook relay" /></div>
-          <div class="carousel-slide"><img src="assets/relaycore-2.png" alt="RelayCore SSRF guard" /></div>
-          <div class="carousel-slide"><img src="assets/relaycore-3.png" alt="RelayCore login lockout" /></div>
-        </div>
-        <div class="carousel-dots"></div>
-        <div class="carousel-controls">
-          <button class="carousel-btn prev">&#8592;</button>
-          <button class="carousel-btn next">&#8594;</button>
-        </div>
+        <img src="assets/relaycore-4.png" alt="RelayCore main dashboard" />
       </div>
       <div class="card-body">
         <div class="card-title">RelayCore</div>
@@ -400,23 +314,11 @@ footer a:hover { color: var(--teal); }
     </div>
 
     <div class="project-card">
-      <div class="carousel" data-carousel>
+      <div class="card-img">
         <div class="chrome-bar">
           <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
         </div>
-        <div class="carousel-track">
-          <div class="carousel-slide"><img src="assets/abtesting-1.png" alt="A/B Testing hero" /></div>
-          <div class="carousel-slide"><img src="assets/abtesting-2.png" alt="A/B significance test" /></div>
-          <div class="carousel-slide"><img src="assets/abtesting-3.png" alt="Keyword analysis" /></div>
-          <div class="carousel-slide"><img src="assets/abtesting-4.png" alt="TF-IDF terms" /></div>
-          <div class="carousel-slide"><img src="assets/abtesting-5.png" alt="Bootstrap histograms" /></div>
-          <div class="carousel-slide"><img src="assets/abtesting-6.png" alt="Violin plots" /></div>
-        </div>
-        <div class="carousel-dots"></div>
-        <div class="carousel-controls">
-          <button class="carousel-btn prev">&#8592;</button>
-          <button class="carousel-btn next">&#8594;</button>
-        </div>
+        <img src="assets/abtesting-1.png" alt="A/B Testing hero" />
       </div>
       <div class="card-body">
         <div class="card-title">Image Generation Prompts A/B Testing</div>
@@ -483,33 +385,5 @@ footer a:hover { color: var(--teal); }
   </p>
 </footer>
 
-<script>
-document.querySelectorAll('[data-carousel]').forEach(carousel => {
-  const track = carousel.querySelector('.carousel-track');
-  const slides = carousel.querySelectorAll('.carousel-slide');
-  const dotsContainer = carousel.querySelector('.carousel-dots');
-  const prevBtn = carousel.querySelector('.prev');
-  const nextBtn = carousel.querySelector('.next');
-  let current = 0;
-
-  slides.forEach((_, i) => {
-    const d = document.createElement('div');
-    d.className = 'cdot' + (i === 0 ? ' active' : '');
-    d.addEventListener('click', () => goTo(i));
-    dotsContainer.appendChild(d);
-  });
-
-  function goTo(n) {
-    current = (n + slides.length) % slides.length;
-    track.style.transform = `translateX(-${current * 100}%)`;
-    carousel.querySelectorAll('.cdot').forEach((d, i) => {
-      d.classList.toggle('active', i === current);
-    });
-  }
-
-  prevBtn.addEventListener('click', () => goTo(current - 1));
-  nextBtn.addEventListener('click', () => goTo(current + 1));
-});
-</script>
 </body>
 </html>
