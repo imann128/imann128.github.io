@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Iman Naeem — Data Science</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #F9FAFB;
+  --surface: #FFFFFF;
+  --ink: #111827;
+  --mid: #374151;
+  --muted: #6B7280;
+  --border: #E5E7EB;
+  --teal: #0D9488;
+  --teal-light: #F0FDFA;
+  --teal-mid: #CCFBF1;
+  --shadow: 0 1px 3px rgba(0,0,0,.08), 0 4px 16px rgba(0,0,0,.06);
+  --shadow-lg: 0 4px 6px rgba(0,0,0,.06), 0 12px 40px rgba(0,0,0,.10);
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--bg); color: var(--ink);
+  font-size: 15px; line-height: 1.6;
+}
+a { color: var(--teal); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(249,250,251,0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 2rem;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 52px;
+}
+.nav-name {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px; font-weight: 500; color: var(--teal);
+}
+.nav-links { display: flex; gap: 1.5rem; list-style: none; }
+.nav-links a { font-size: 13px; color: var(--mid); font-weight: 500; }
+.nav-links a:hover { color: var(--teal); text-decoration: none; }
+
+.hero {
+  max-width: 760px; margin: 0 auto;
+  padding: 5rem 2rem 4rem;
+}
+.hero-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px; color: var(--teal);
+  letter-spacing: 0.1em; text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.hero h1 {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  line-height: 1.1; font-weight: 400;
+  margin-bottom: 1.25rem;
+}
+.hero p { font-size: 1.05rem; color: var(--mid); max-width: 540px; margin-bottom: 2rem; }
+
+.stats-row {
+  display: flex; gap: 2.5rem; margin-bottom: 2rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--teal-light);
+  border: 1px solid var(--teal-mid);
+  border-radius: 10px; width: fit-content;
+}
+.stat-num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.6rem; color: var(--teal); line-height: 1;
+}
+.stat-label {
+  font-size: 11px; color: var(--muted);
+  font-family: 'JetBrains Mono', monospace;
+  text-transform: uppercase; letter-spacing: 0.06em; margin-top: 2px;
+}
+
+.hero-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.hero-link {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px; font-weight: 500;
+  padding: 0.4rem 0.85rem;
+  border: 1px solid var(--border); border-radius: 6px;
+  color: var(--mid); background: var(--surface);
+  transition: border-color 0.15s, color 0.15s;
+}
+.hero-link:hover { border-color: var(--teal); color: var(--teal); text-decoration: none; }
+
+.section { max-width: 980px; margin: 0 auto; padding: 3rem 2rem; }
+.section-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 2.5rem; }
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; font-weight: 500; color: var(--teal);
+  letter-spacing: 0.1em; text-transform: uppercase;
+}
+.section-rule { flex: 1; height: 1px; background: var(--border); }
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+@media (max-width: 680px) { .projects-grid { grid-template-columns: 1fr; } }
+
+.project-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px; overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.project-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+
+/* CAROUSEL */
+.carousel { position: relative; background: #1E1E1E; }
+.chrome-bar {
+  padding: 8px 12px 6px;
+  display: flex; align-items: center; gap: 5px;
+}
+.dot { width: 9px; height: 9px; border-radius: 50%; }
+.dot-r { background: #FF5F57; }
+.dot-y { background: #FFBD2E; }
+.dot-g { background: #28CA42; }
+
+.carousel-track {
+  display: flex; overflow: hidden;
+}
+.carousel-slide {
+  min-width: 100%; transition: transform 0.3s ease;
+}
+.carousel-slide img {
+  width: 100%; display: block;
+  height: 195px; object-fit: cover; object-position: top;
+}
+
+.carousel-controls {
+  position: absolute; bottom: 8px; right: 8px;
+  display: flex; gap: 5px;
+}
+.carousel-btn {
+  background: rgba(0,0,0,0.55); border: none; cursor: pointer;
+  color: #fff; width: 24px; height: 24px; border-radius: 5px;
+  font-size: 12px; display: flex; align-items: center; justify-content: center;
+  transition: background 0.15s;
+}
+.carousel-btn:hover { background: rgba(13,148,136,0.8); }
+
+.carousel-dots {
+  position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%);
+  display: flex; gap: 4px;
+}
+.cdot {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: rgba(255,255,255,0.35); cursor: pointer;
+  transition: background 0.2s;
+}
+.cdot.active { background: var(--teal); }
+
+.card-body { padding: 1.1rem 1.25rem 1.25rem; }
+.card-title { font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 0.35rem; }
+.card-desc { font-size: 13px; color: var(--mid); line-height: 1.55; margin-bottom: 0.85rem; }
+.card-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 0.85rem; }
+.tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px; font-weight: 500;
+  padding: 2px 7px;
+  background: var(--teal-light); border: 1px solid var(--teal-mid);
+  border-radius: 4px; color: var(--teal);
+}
+.card-links { display: flex; gap: 0.75rem; }
+.card-link { font-size: 12px; font-weight: 500; color: var(--muted); }
+.card-link:hover { color: var(--teal); }
+
+.oss-list { display: flex; flex-direction: column; gap: 0.85rem; }
+.oss-item {
+  display: flex; align-items: flex-start; gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+}
+.oss-logo {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; font-weight: 500;
+  padding: 4px 8px; background: var(--ink); color: #fff;
+  border-radius: 5px; white-space: nowrap; margin-top: 1px;
+}
+.oss-title { font-size: 13.5px; font-weight: 600; color: var(--ink); margin-bottom: 2px; }
+.oss-desc { font-size: 13px; color: var(--mid); }
+.oss-status { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; color: var(--teal); margin-top: 4px; }
+
+.skills-block {
+  display: grid; grid-template-columns: 100px 1fr;
+  gap: 0.6rem 1rem;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 10px; padding: 1.25rem 1.5rem;
+}
+.skills-cat {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; font-weight: 500; color: var(--muted);
+  text-transform: uppercase; letter-spacing: 0.06em; padding-top: 2px;
+}
+.skills-list { font-size: 13.5px; color: var(--mid); }
+
+footer {
+  border-top: 1px solid var(--border);
+  padding: 2rem; text-align: center;
+  font-size: 12.5px; color: var(--muted);
+}
+footer a { color: var(--muted); }
+footer a:hover { color: var(--teal); }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-name">imann128</span>
+  <ul class="nav-links">
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#oss">Open Source</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="https://github.com/imann128" target="_blank">GitHub</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <p class="hero-eyebrow">NUST SEECS · Islamabad</p>
+  <h1>Iman Naeem</h1>
+  <div class="stats-row">
+    <div class="stat-item"><div class="stat-num">6</div><div class="stat-label">Projects built</div></div>
+    <div class="stat-item"><div class="stat-num">200+</div><div class="stat-label">Docker pulls</div></div>
+    <div class="stat-item"><div class="stat-num">90+</div><div class="stat-label">GitHub cloners</div></div>
+    <div class="stat-item"><div class="stat-num">2</div><div class="stat-label">OSS contributions</div></div>
+  </div>
+  <p>Data Science student building at the intersection of engineering, analytics, and developer tooling. I work across Python, .NET, and React — with a focus on Pakistani market data and production-grade systems.</p>
+  <div class="hero-links">
+    <a class="hero-link" href="https://github.com/imann128" target="_blank">github.com/imann128</a>
+    <a class="hero-link" href="https://linkedin.com/in/imannaeem-52a0a8322" target="_blank">linkedin</a>
+    <a class="hero-link" href="https://dev.to/imann_12" target="_blank">dev.to/imann_12</a>
+    <a class="hero-link" href="mailto:iman.naeem12@gmail.com">iman.naeem12@gmail.com</a>
+  </div>
+</section>
+
+<section class="section" id="projects">
+  <div class="section-header">
+    <span class="section-label">Projects</span>
+    <div class="section-rule"></div>
+  </div>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div class="carousel" data-carousel>
+        <div class="chrome-bar">
+          <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
+        </div>
+        <div class="carousel-track">
+          <div class="carousel-slide"><img src="assets/ogdc-1.png" alt="OGDC overview" /></div>
+          <div class="carousel-slide"><img src="assets/ogdc-2.png" alt="OGDC statistical tests" /></div>
+          <div class="carousel-slide"><img src="assets/ogdc-3.png" alt="OGDC GARCH volatility" /></div>
+          <div class="carousel-slide"><img src="assets/ogdc-4.png" alt="OGDC moving averages" /></div>
+          <div class="carousel-slide"><img src="assets/ogdc-5.png" alt="OGDC volatility regimes" /></div>
+          <div class="carousel-slide"><img src="assets/ogdc-6.png" alt="OGDC backtesting" /></div>
+        </div>
+        <div class="carousel-dots"></div>
+        <div class="carousel-controls">
+          <button class="carousel-btn prev">&#8592;</button>
+          <button class="carousel-btn next">&#8594;</button>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-title">OGDC Equity Analysis Platform</div>
+        <div class="card-desc">End-to-end pipeline on 6+ years of PSX data. GARCH volatility modelling, Bollinger Band backtesting, and sentiment analysis across 14 sources. Deployed React dashboard.</div>
+        <div class="card-tags"><span class="tag">Python</span><span class="tag">React.js</span><span class="tag">GARCH</span><span class="tag">Recharts</span><span class="tag">Vercel</span></div>
+        <div class="card-links">
+          <a class="card-link" href="https://github.com/imann128/ogdc-project" target="_blank">↗ GitHub</a>
+          <a class="card-link" href="https://ogdc-project.vercel.app" target="_blank">↗ Live</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="carousel" data-carousel>
+        <div class="chrome-bar">
+          <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
+        </div>
+        <div class="carousel-track">
+          <div class="carousel-slide"><img src="assets/edumetrics-1.png" alt="EduMetrics analytics overview" /></div>
+          <div class="carousel-slide"><img src="assets/edumetrics-2.png" alt="EduMetrics item analysis" /></div>
+          <div class="carousel-slide"><img src="assets/edumetrics-3.png" alt="EduMetrics module detail" /></div>
+        </div>
+        <div class="carousel-dots"></div>
+        <div class="carousel-controls">
+          <button class="carousel-btn prev">&#8592;</button>
+          <button class="carousel-btn next">&#8594;</button>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-title">EduMetrics</div>
+        <div class="card-desc">Assessment analytics platform with Bloom's taxonomy classification, CTT item analysis (p-value, discrimination index), Cronbach's α reliability scoring, and mastery tracking.</div>
+        <div class="card-tags"><span class="tag">React 19</span><span class="tag">Vite</span><span class="tag">Recharts</span><span class="tag">CTT</span></div>
+        <div class="card-links">
+          <a class="card-link" href="https://github.com/imann128/EduMetrics" target="_blank">↗ GitHub</a>
+          <a class="card-link" href="https://edu-metrics-alpha.vercel.app" target="_blank">↗ Live</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="carousel" data-carousel>
+        <div class="chrome-bar">
+          <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
+        </div>
+        <div class="carousel-track">
+          <div class="carousel-slide"><img src="assets/anomaly-1.png" alt="IoT dashboard" /></div>
+          <div class="carousel-slide"><img src="assets/anomaly-2.png" alt="IoT controls" /></div>
+          <div class="carousel-slide"><img src="assets/anomaly-3.png" alt="Anomaly time series" /></div>
+          <div class="carousel-slide"><img src="assets/anomaly-4.png" alt="Contamination sensitivity" /></div>
+          <div class="carousel-slide"><img src="assets/anomaly-5.png" alt="Severity breakdown" /></div>
+          <div class="carousel-slide"><img src="assets/anomaly-6.png" alt="Benchmark results" /></div>
+          <div class="carousel-slide"><img src="assets/anomaly-7.png" alt="Detector agreement" /></div>
+          <div class="carousel-slide"><img src="assets/anomaly-8.png" alt="LSTM autoencoder" /></div>
+        </div>
+        <div class="carousel-dots"></div>
+        <div class="carousel-controls">
+          <button class="carousel-btn prev">&#8592;</button>
+          <button class="carousel-btn next">&#8594;</button>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-title">IoT Sensor Anomaly Detection Pipeline</div>
+        <div class="card-desc">Dual-method anomaly detection on NASA SMAP/MSL telemetry — Isolation Forest and z-score rolling window — benchmarked against labelled ground truth with precision/recall per channel.</div>
+        <div class="card-tags"><span class="tag">Python</span><span class="tag">Isolation Forest</span><span class="tag">LSTM</span><span class="tag">Docker</span></div>
+        <div class="card-links">
+          <a class="card-link" href="https://github.com/imann128" target="_blank">↗ GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="carousel" data-carousel>
+        <div class="chrome-bar">
+          <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
+        </div>
+        <div class="carousel-track">
+          <div class="carousel-slide"><img src="assets/devmetrics-1.png" alt="DevMetrics dashboard" /></div>
+          <div class="carousel-slide"><img src="assets/devmetrics-2.png" alt="DevMetrics craftsmanship" /></div>
+          <div class="carousel-slide"><img src="assets/devmetrics-3.png" alt="DevMetrics repositories" /></div>
+          <div class="carousel-slide"><img src="assets/devmetrics-4.png" alt="DevMetrics snapshot history" /></div>
+          <div class="carousel-slide"><img src="assets/devmetrics-5.png" alt="DevMetrics Prometheus" /></div>
+        </div>
+        <div class="carousel-dots"></div>
+        <div class="carousel-controls">
+          <button class="carousel-btn prev">&#8592;</button>
+          <button class="carousel-btn next">&#8594;</button>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-title">DevMetrics</div>
+        <div class="card-desc">Self-hosted Git activity monitor with closed-loop telemetry. Streams live commit data via SignalR, computes craftsmanship signals, and exposes a Prometheus-compatible /metrics endpoint.</div>
+        <div class="card-tags"><span class="tag">.NET 8</span><span class="tag">SignalR</span><span class="tag">OpenAPI 3.0</span><span class="tag">Prometheus</span><span class="tag">Docker</span></div>
+        <div class="card-links">
+          <a class="card-link" href="https://github.com/imann128/DevMetrics" target="_blank">↗ GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="carousel" data-carousel>
+        <div class="chrome-bar">
+          <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
+        </div>
+        <div class="carousel-track">
+          <div class="carousel-slide"><img src="assets/relaycore-4.png" alt="RelayCore main dashboard" /></div>
+          <div class="carousel-slide"><img src="assets/relaycore-1.png" alt="RelayCore webhook relay" /></div>
+          <div class="carousel-slide"><img src="assets/relaycore-2.png" alt="RelayCore SSRF guard" /></div>
+          <div class="carousel-slide"><img src="assets/relaycore-3.png" alt="RelayCore login lockout" /></div>
+        </div>
+        <div class="carousel-dots"></div>
+        <div class="carousel-controls">
+          <button class="carousel-btn prev">&#8592;</button>
+          <button class="carousel-btn next">&#8594;</button>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-title">RelayCore</div>
+        <div class="card-desc">Production webhook relay with at-least-once delivery, Redis idempotent deduplication, JSONPath fan-out routing, HMAC-SHA256 verification, SSRF guard, and dead-letter queue.</div>
+        <div class="card-tags"><span class="tag">Python</span><span class="tag">Django</span><span class="tag">Celery</span><span class="tag">Redis</span><span class="tag">Docker</span></div>
+        <div class="card-links">
+          <a class="card-link" href="https://github.com/imann128/RelayCore" target="_blank">↗ GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="carousel" data-carousel>
+        <div class="chrome-bar">
+          <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
+        </div>
+        <div class="carousel-track">
+          <div class="carousel-slide"><img src="assets/abtesting-1.png" alt="A/B Testing hero" /></div>
+          <div class="carousel-slide"><img src="assets/abtesting-2.png" alt="A/B significance test" /></div>
+          <div class="carousel-slide"><img src="assets/abtesting-3.png" alt="Keyword analysis" /></div>
+          <div class="carousel-slide"><img src="assets/abtesting-4.png" alt="TF-IDF terms" /></div>
+          <div class="carousel-slide"><img src="assets/abtesting-5.png" alt="Bootstrap histograms" /></div>
+          <div class="carousel-slide"><img src="assets/abtesting-6.png" alt="Violin plots" /></div>
+        </div>
+        <div class="carousel-dots"></div>
+        <div class="carousel-controls">
+          <button class="carousel-btn prev">&#8592;</button>
+          <button class="carousel-btn next">&#8594;</button>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-title">Image Generation Prompts A/B Testing</div>
+        <div class="card-desc">Product intelligence dashboard on 50K generation events. Answers five business questions: which model ships, where latency costs retention, quality trends, optimal prompt length, keyword correlation.</div>
+        <div class="card-tags"><span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">Plotly</span><span class="tag">scipy</span><span class="tag">SQLite</span></div>
+        <div class="card-links">
+          <a class="card-link" href="https://github.com/imann128/image-generation-A-B-testing" target="_blank">↗ GitHub</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" id="oss">
+  <div class="section-header">
+    <span class="section-label">Open Source</span>
+    <div class="section-rule"></div>
+  </div>
+  <div class="oss-list">
+    <div class="oss-item">
+      <span class="oss-logo">statsmodels</span>
+      <div>
+        <div class="oss-title">Allow seasonal-differencing-only ARIMA models with non-seasonal estimators</div>
+        <div class="oss-desc">Addresses Issue #6159. Enables ARIMA configurations where seasonal differencing is applied without requiring seasonal AR/MA terms.</div>
+        <div class="oss-status">PR #9811 · All CI checks passing · Awaiting maintainer approval</div>
+      </div>
+    </div>
+    <div class="oss-item">
+      <span class="oss-logo">dagster</span>
+      <div>
+        <div class="oss-title">Support Ed25519 and ECDSA keys in SSHResource key_string parameter</div>
+        <div class="oss-desc">Replaces hardcoded RSA-only key loading with a try-each-class loop supporting RSA, Ed25519, and ECDSA key types.</div>
+        <div class="oss-status">PR #33909 · Under review</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="skills">
+  <div class="section-header">
+    <span class="section-label">Skills</span>
+    <div class="section-rule"></div>
+  </div>
+  <div class="skills-block">
+    <div class="skills-cat">Languages</div>
+    <div class="skills-list">Python, C# / .NET, JavaScript / React.js, Java</div>
+    <div class="skills-cat">Analytics</div>
+    <div class="skills-list">pandas, scikit-learn, scipy, Plotly, Streamlit, Recharts, GARCH, Isolation Forest</div>
+    <div class="skills-cat">Backend</div>
+    <div class="skills-list">Django, Flask, .NET 8, SignalR, Celery, EF Core, OpenAPI 3.0 / Swagger</div>
+    <div class="skills-cat">Infra</div>
+    <div class="skills-list">Docker, Redis, Prometheus, PostgreSQL, MySQL, SQLite, GitHub Actions</div>
+    <div class="skills-cat">Writing</div>
+    <div class="skills-list">Technical blog posts, developer documentation, SEO — dev.to/imann_12</div>
+  </div>
+</section>
+
+<footer>
+  <p>Iman Naeem · NUST SEECS, Islamabad ·
+    <a href="https://github.com/imann128" target="_blank">GitHub</a> ·
+    <a href="https://linkedin.com/in/imannaeem-52a0a8322" target="_blank">LinkedIn</a> ·
+    <a href="mailto:iman.naeem12@gmail.com">iman.naeem12@gmail.com</a>
+  </p>
+</footer>
+
+<script>
+document.querySelectorAll('[data-carousel]').forEach(carousel => {
+  const track = carousel.querySelector('.carousel-track');
+  const slides = carousel.querySelectorAll('.carousel-slide');
+  const dotsContainer = carousel.querySelector('.carousel-dots');
+  const prevBtn = carousel.querySelector('.prev');
+  const nextBtn = carousel.querySelector('.next');
+  let current = 0;
+
+  slides.forEach((_, i) => {
+    const d = document.createElement('div');
+    d.className = 'cdot' + (i === 0 ? ' active' : '');
+    d.addEventListener('click', () => goTo(i));
+    dotsContainer.appendChild(d);
+  });
+
+  function goTo(n) {
+    current = (n + slides.length) % slides.length;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    carousel.querySelectorAll('.cdot').forEach((d, i) => {
+      d.classList.toggle('active', i === current);
+    });
+  }
+
+  prevBtn.addEventListener('click', () => goTo(current - 1));
+  nextBtn.addEventListener('click', () => goTo(current + 1));
+});
+</script>
+</body>
+</html>
