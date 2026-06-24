@@ -3,186 +3,336 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Iman Naeem — Data Science</title>
+<title>Iman Naeem — Data Science & ML Tooling</title>
+<meta name="description" content="Iman Naeem — Data Science student building production-grade data and ML tooling. Author of TSAuditor, contributor to statsmodels, now focused on fintech." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Serif:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg: #F9FAFB;
+  --bg: #FAF6EA;
   --surface: #FFFFFF;
-  --ink: #111827;
-  --mid: #374151;
-  --muted: #6B7280;
-  --border: #E5E7EB;
+  --ink: #0F172A;
+  --mid: #334155;
+  --muted: #64748B;
+  --border: #E7E5E4;
   --teal: #0D9488;
   --teal-light: #F0FDFA;
   --teal-mid: #CCFBF1;
-  --shadow: 0 1px 3px rgba(0,0,0,.08), 0 4px 16px rgba(0,0,0,.06);
-  --shadow-lg: 0 4px 6px rgba(0,0,0,.06), 0 12px 40px rgba(0,0,0,.10);
+
+  /* per-project tints */
+  --t-teal-bg:   #F0FDFA; --t-teal-bd:   #CCFBF1; --t-teal-ink:   #0D9488;
+  --t-indigo-bg: #EEF2FF; --t-indigo-bd: #E0E7FF; --t-indigo-ink: #4F46E5;
+  --t-violet-bg: #F5F3FF; --t-violet-bd: #EDE9FE; --t-violet-ink: #7C3AED;
+  --t-rose-bg:   #FFF1F2; --t-rose-bd:   #FFE4E6; --t-rose-ink:   #E11D48;
+  --t-amber-bg:  #FFFBEB; --t-amber-bd:  #FEF3C7; --t-amber-ink:  #B45309;
+
+  --shadow: 0 1px 2px rgba(15,23,42,.04), 0 4px 16px rgba(15,23,42,.05);
+  --shadow-lg: 0 6px 12px rgba(15,23,42,.06), 0 18px 48px rgba(15,23,42,.10);
 }
 
 html { scroll-behavior: smooth; }
 body {
-  font-family: 'Inter', system-ui, sans-serif;
-  background: var(--bg); color: var(--ink);
-  font-size: 15px; line-height: 1.6;
+  font-family: 'Lora', Georgia, serif;
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(rgba(101,120,74,0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(101,120,74,0.08) 1px, transparent 1px);
+  background-size: 26px 26px;
+  color: var(--ink);
+  font-size: 15.5px; line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
 }
 a { color: var(--teal); text-decoration: none; }
 a:hover { text-decoration: underline; }
+.mono { font-family: 'JetBrains Mono', monospace; }
 
+/* NAV */
 nav {
   position: sticky; top: 0; z-index: 100;
-  background: rgba(249,250,251,0.92);
-  backdrop-filter: blur(8px);
+  background: rgba(250,246,234,0.85);
+  backdrop-filter: saturate(180%) blur(10px);
   border-bottom: 1px solid var(--border);
-  padding: 0 2rem;
+  padding: 0 1.75rem;
   display: flex; align-items: center; justify-content: space-between;
-  height: 52px;
+  height: 56px;
 }
 .nav-name {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 13px; font-weight: 500; color: var(--teal);
+  font-size: 13px; font-weight: 500; color: var(--ink);
 }
+.nav-name b { color: var(--teal); }
 .nav-links { display: flex; gap: 1.5rem; list-style: none; }
 .nav-links a { font-size: 13px; color: var(--mid); font-weight: 500; }
 .nav-links a:hover { color: var(--teal); text-decoration: none; }
+@media (max-width: 560px) { .nav-links { gap: 1rem; } .nav-links .hide-sm { display: none; } }
 
+/* HERO */
 .hero {
-  max-width: 760px; margin: 0 auto;
-  padding: 5rem 2rem 4rem;
+  max-width: 880px; margin: 0 auto;
+  padding: 5rem 1.75rem 3rem;
 }
 .hero-eyebrow {
   font-family: 'JetBrains Mono', monospace;
   font-size: 12px; color: var(--teal);
-  letter-spacing: 0.1em; text-transform: uppercase;
+  letter-spacing: 0.12em; text-transform: uppercase;
   margin-bottom: 1rem;
 }
 .hero h1 {
-  font-family: 'DM Serif Display', Georgia, serif;
-  font-size: clamp(2.4rem, 5vw, 3.6rem);
-  line-height: 1.1; font-weight: 400;
+  font-family: 'Noto Serif', Georgia, serif;
+  font-size: clamp(2.6rem, 6vw, 4rem);
+  line-height: 1.02; font-weight: 500;
+  letter-spacing: -0.01em;
   margin-bottom: 1.25rem;
 }
-.hero p { font-size: 1.05rem; color: var(--mid); max-width: 540px; margin-bottom: 2rem; }
+.hero h1 em { font-style: italic; color: var(--teal); }
+.hero-lede { font-size: 1.1rem; color: var(--mid); max-width: 620px; margin-bottom: 2rem; }
 
 .stats-row {
-  display: flex; gap: 2.5rem; margin-bottom: 2rem;
-  padding: 1.25rem 1.5rem;
-  background: var(--teal-light);
-  border: 1px solid var(--teal-mid);
-  border-radius: 10px; width: fit-content;
+  display: grid; grid-template-columns: repeat(4, auto);
+  gap: 2.25rem; margin-bottom: 2.25rem;
+  padding: 1.25rem 1.6rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px; width: fit-content;
+  box-shadow: var(--shadow);
+}
+@media (max-width: 560px) {
+  .stats-row { grid-template-columns: repeat(2, 1fr); gap: 1.25rem 2rem; width: 100%; }
 }
 .stat-num {
-  font-family: 'DM Serif Display', serif;
-  font-size: 1.6rem; color: var(--teal); line-height: 1;
+  font-family: 'Noto Serif', serif;
+  font-size: 1.7rem; font-weight: 500; color: var(--ink); line-height: 1;
 }
 .stat-label {
-  font-size: 11px; color: var(--muted);
+  font-size: 10.5px; color: var(--muted);
   font-family: 'JetBrains Mono', monospace;
-  text-transform: uppercase; letter-spacing: 0.06em; margin-top: 2px;
+  text-transform: uppercase; letter-spacing: 0.05em; margin-top: 6px;
 }
 
-.hero-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.hero-links { display: flex; flex-wrap: wrap; gap: 0.6rem; }
 .hero-link {
   display: inline-flex; align-items: center; gap: 0.4rem;
   font-family: 'JetBrains Mono', monospace;
   font-size: 12px; font-weight: 500;
-  padding: 0.4rem 0.85rem;
-  border: 1px solid var(--border); border-radius: 6px;
+  padding: 0.45rem 0.9rem;
+  border: 1px solid var(--border); border-radius: 8px;
   color: var(--mid); background: var(--surface);
-  transition: border-color 0.15s, color 0.15s;
+  transition: border-color 0.15s, color 0.15s, transform 0.15s;
 }
-.hero-link:hover { border-color: var(--teal); color: var(--teal); text-decoration: none; }
+.hero-link:hover { border-color: var(--teal); color: var(--teal); text-decoration: none; transform: translateY(-1px); }
 
-.section { max-width: 980px; margin: 0 auto; padding: 3rem 2rem; }
-.section-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 2.5rem; }
+/* SECTION */
+.section { max-width: 1000px; margin: 0 auto; padding: 2.75rem 1.75rem; }
+.section-header { display: flex; align-items: center; gap: 0.85rem; margin-bottom: 2rem; }
 .section-label {
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px; font-weight: 500; color: var(--teal);
-  letter-spacing: 0.1em; text-transform: uppercase;
+  letter-spacing: 0.12em; text-transform: uppercase; white-space: nowrap;
 }
 .section-rule { flex: 1; height: 1px; background: var(--border); }
 
-.projects-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.25rem;
-}
-@media (max-width: 680px) { .projects-grid { grid-template-columns: 1fr; } }
-
-.project-card {
+/* FEATURED — TSAuditor */
+.featured {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 12px; overflow: hidden;
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: grid; grid-template-columns: 1.05fr 0.95fr;
+}
+@media (max-width: 800px) { .featured { grid-template-columns: 1fr; } }
+.featured-body { padding: 2rem 2rem 1.9rem; }
+.featured-flag {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--teal); background: var(--teal-light);
+  border: 1px solid var(--teal-mid); border-radius: 999px;
+  padding: 4px 11px; margin-bottom: 1.1rem;
+}
+.featured-flag .pulse { width: 7px; height: 7px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 0 0 rgba(13,148,136,.5); animation: pulse 2s infinite; }
+@keyframes pulse { 0%{box-shadow:0 0 0 0 rgba(13,148,136,.45);} 70%{box-shadow:0 0 0 7px rgba(13,148,136,0);} 100%{box-shadow:0 0 0 0 rgba(13,148,136,0);} }
+.featured h2 {
+  font-family: 'Noto Serif', serif; font-weight: 600;
+  font-size: 1.85rem; line-height: 1.1; margin-bottom: 0.6rem; letter-spacing: -0.01em;
+}
+.featured h2 .sub { font-family:'JetBrains Mono',monospace; font-size: 12px; font-weight:400; color: var(--muted); display:block; margin-top: 5px; letter-spacing: 0; }
+.featured p { color: var(--mid); font-size: 14.5px; margin-bottom: 1.1rem; }
+.chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.chip {
+  font-size: 11.5px; font-weight: 500;
+  padding: 4px 10px; border-radius: 999px;
+  background: var(--teal-light); color: var(--teal); border: 1px solid var(--teal-mid);
+}
+.traction { display: flex; flex-wrap: wrap; gap: 1.4rem; margin-bottom: 0.5rem; padding-top: 0.25rem; }
+.traction-note { font-style: italic; font-size: 13px; color: var(--muted); margin-bottom: 1.3rem; }
+.traction-item .tn { font-family:'Noto Serif',serif; font-weight:600; font-size: 1.25rem; color: var(--ink); line-height: 1; }
+.traction-item .tl { font-family:'JetBrains Mono',monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin-top: 4px; }
+.featured-links { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 500;
+  padding: 0.5rem 0.95rem; border-radius: 8px;
+  transition: transform 0.15s, opacity 0.15s, border-color 0.15s;
+}
+.btn-solid { background: var(--teal); color: #fff; }
+.btn-solid:hover { opacity: 0.92; text-decoration: none; transform: translateY(-1px); }
+.btn-ghost { background: var(--surface); color: var(--mid); border: 1px solid var(--border); }
+.btn-ghost:hover { border-color: var(--teal); color: var(--teal); text-decoration: none; transform: translateY(-1px); }
+
+/* terminal preview */
+.term { background: #0B1120; padding: 0; display: flex; flex-direction: column; }
+.term-bar { display: flex; align-items: center; gap: 6px; padding: 11px 14px; border-bottom: 1px solid rgba(255,255,255,.07); }
+.term-bar .dot { width: 11px; height: 11px; border-radius: 50%; }
+.dot-r { background: #FF5F57; } .dot-y { background: #FFBD2E; } .dot-g { background: #28CA42; }
+.term-bar .tt { margin-left: 8px; font-family:'JetBrains Mono',monospace; font-size: 11px; color: #64748B; }
+.term pre {
+  font-family: 'JetBrains Mono', monospace; font-size: 12px; line-height: 1.75;
+  color: #CBD5E1; padding: 1.1rem 1.25rem; overflow-x: auto; margin: 0; flex: 1;
+}
+.term .c-cmd { color: #5EEAD4; }
+.term .c-dim { color: #475569; }
+.term .c-warn { color: #FBBF24; }
+.term .c-ok { color: #34D399; }
+.term .c-head { color: #93C5FD; }
+
+/* PyPI release card (featured right column) */
+.pypi { display:flex; flex-direction:column; background:#fff; height:100%; }
+.pypi-head { background:#006dad; color:#fff; padding:1.5rem 1.6rem; }
+.pypi-ver { font-family:'JetBrains Mono',monospace; font-size:1.4rem; font-weight:500; margin-bottom:0.95rem; }
+.pypi-install { display:inline-flex; align-items:center; gap:9px; font-family:'JetBrains Mono',monospace; font-size:12.5px; background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.28); border-radius:8px; padding:8px 13px; }
+.pypi-install svg { width:13px; height:13px; opacity:.8; }
+.pypi-release { display:flex; align-items:center; gap:9px; font-family:'JetBrains Mono',monospace; font-size:11px; margin-top:1rem; color:#d6ecf7; }
+.pypi-release b { display:inline-flex; align-items:center; gap:6px; background:#2c9b3f; color:#fff; padding:4px 10px; border-radius:6px; font-weight:500; }
+.pypi-body { padding:1.4rem 1.6rem; flex:1; }
+.pypi-desc { font-size:12.5px; color:var(--mid); line-height:1.6; margin-bottom:1.1rem; }
+.pypi-badges { display:flex; flex-wrap:wrap; gap:0.45rem; }
+.pypi-badge { display:inline-flex; font-family:'JetBrains Mono',monospace; font-size:10.5px; border-radius:5px; overflow:hidden; }
+.pypi-badge span { padding:3px 9px; }
+.pypi-badge .k { background:#3a3a3a; color:#fff; }
+.pypi-badge .v-ok  { background:#3f9c35; color:#fff; }
+.pypi-badge .v-cov { background:#5b9c35; color:#fff; }
+.pypi-badge .v-mit { background:#b5852a; color:#fff; }
+
+/* PROJECTS GRID */
+.projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+@media (max-width: 720px) { .projects-grid { grid-template-columns: 1fr; } }
+
+.project-card {
+  border: 1px solid var(--card-bd, var(--border));
+  background: var(--card-bg, var(--surface));
+  border-radius: 14px; overflow: hidden;
   box-shadow: var(--shadow);
   transition: box-shadow 0.2s, transform 0.2s;
+  display: flex; flex-direction: column;
 }
-.project-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+.project-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
 
-/* CARD IMAGE */
 .card-img { background: #1E1E1E; }
-.chrome-bar {
-  padding: 8px 12px 6px;
-  display: flex; align-items: center; gap: 5px;
-}
-.dot { width: 9px; height: 9px; border-radius: 50%; }
-.dot-r { background: #FF5F57; }
-.dot-y { background: #FFBD2E; }
-.dot-g { background: #28CA42; }
-.card-img img {
-  width: 100%; display: block;
-  height: 195px; object-fit: cover; object-position: top;
-}
+.chrome-bar { padding: 8px 12px 6px; display: flex; align-items: center; gap: 5px; }
+.chrome-bar .dot { width: 9px; height: 9px; border-radius: 50%; }
+.card-img img { width: 100%; display: block; height: 188px; object-fit: cover; object-position: top; }
 
-.card-body { padding: 1.1rem 1.25rem 1.25rem; }
-.card-title { font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 0.35rem; }
-.card-desc { font-size: 13px; color: var(--mid); line-height: 1.55; margin-bottom: 0.85rem; }
-.card-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 0.85rem; }
+.card-body { padding: 1.1rem 1.25rem 1.25rem; flex: 1; display: flex; flex-direction: column; }
+.card-title { font-size: 14.5px; font-weight: 600; color: var(--ink); margin-bottom: 0.4rem; }
+.card-desc { font-size: 13px; color: var(--mid); line-height: 1.55; margin-bottom: 0.9rem; flex: 1; }
+.card-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 0.9rem; }
 .tag {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 10.5px; font-weight: 500;
-  padding: 2px 7px;
-  background: var(--teal-light); border: 1px solid var(--teal-mid);
-  border-radius: 4px; color: var(--teal);
+  font-size: 10.5px; font-weight: 500; padding: 2px 8px; border-radius: 5px;
+  background: var(--card-bg-deep, var(--teal-light));
+  border: 1px solid var(--card-bd, var(--teal-mid));
+  color: var(--card-ink, var(--teal));
 }
-.card-links { display: flex; gap: 0.75rem; }
-.card-link { font-size: 12px; font-weight: 500; color: var(--muted); }
-.card-link:hover { color: var(--teal); }
+.card-links { display: flex; gap: 0.85rem; }
+.card-link { font-family:'JetBrains Mono',monospace; font-size: 11.5px; font-weight: 500; color: var(--muted); }
+.card-link:hover { color: var(--card-ink, var(--teal)); }
 
+/* tint modifiers */
+.tint-teal   { --card-bg: var(--t-teal-bg);   --card-bd: var(--t-teal-bd);   --card-ink: var(--t-teal-ink);   --card-bg-deep:#FFFFFF; }
+.tint-indigo { --card-bg: var(--t-indigo-bg); --card-bd: var(--t-indigo-bd); --card-ink: var(--t-indigo-ink); --card-bg-deep:#FFFFFF; }
+.tint-violet { --card-bg: var(--t-violet-bg); --card-bd: var(--t-violet-bd); --card-ink: var(--t-violet-ink); --card-bg-deep:#FFFFFF; }
+.tint-rose   { --card-bg: var(--t-rose-bg);   --card-bd: var(--t-rose-bd);   --card-ink: var(--t-rose-ink);   --card-bg-deep:#FFFFFF; }
+.tint-amber  { --card-bg: var(--t-amber-bg);  --card-bd: var(--t-amber-bd);  --card-ink: var(--t-amber-ink);  --card-bg-deep:#FFFFFF; }
+
+/* OPEN SOURCE */
 .oss-list { display: flex; flex-direction: column; gap: 0.85rem; }
 .oss-item {
   display: flex; align-items: flex-start; gap: 1rem;
-  padding: 1rem 1.25rem;
-  background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+  padding: 1.1rem 1.3rem;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
 }
 .oss-logo {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px; font-weight: 500;
-  padding: 4px 8px; background: var(--ink); color: #fff;
-  border-radius: 5px; white-space: nowrap; margin-top: 1px;
+  font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 500;
+  padding: 5px 9px; background: var(--ink); color: #fff;
+  border-radius: 6px; white-space: nowrap; margin-top: 1px;
 }
-.oss-title { font-size: 13.5px; font-weight: 600; color: var(--ink); margin-bottom: 2px; }
+.oss-title { font-size: 13.5px; font-weight: 600; color: var(--ink); margin-bottom: 3px; }
 .oss-desc { font-size: 13px; color: var(--mid); }
-.oss-status { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; color: var(--teal); margin-top: 4px; }
+.oss-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 0.6rem; margin-top: 8px; }
+.oss-status { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; color: var(--muted); }
+.badge-merged {
+  font-family:'JetBrains Mono',monospace; font-size: 10px; font-weight: 500;
+  display:inline-flex; align-items:center; gap:5px;
+  padding: 3px 9px; border-radius: 999px;
+  background: #F5F3FF; color: #7C3AED; border: 1px solid #EDE9FE;
+}
+.badge-merged svg { width: 12px; height: 12px; }
+.badge-shark {
+  font-family:'JetBrains Mono',monospace; font-size: 10px; font-weight: 500;
+  display:inline-flex; align-items:center; gap:5px;
+  padding: 3px 9px; border-radius: 999px;
+  background: linear-gradient(135deg,#FDE68A,#FBBF24); color: #7C2D12; border: 1px solid #FCD34D;
+}
 
+/* SKILLS + LANGUAGE METER */
 .skills-block {
-  display: grid; grid-template-columns: 100px 1fr;
-  gap: 0.6rem 1rem;
+  display: grid; grid-template-columns: 110px 1fr; gap: 0.7rem 1.2rem;
   background: var(--surface); border: 1px solid var(--border);
-  border-radius: 10px; padding: 1.25rem 1.5rem;
+  border-radius: 12px; padding: 1.4rem 1.6rem;
 }
 .skills-cat {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px; font-weight: 500; color: var(--muted);
-  text-transform: uppercase; letter-spacing: 0.06em; padding-top: 2px;
+  font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500; color: var(--muted);
+  text-transform: uppercase; letter-spacing: 0.05em; padding-top: 2px;
 }
 .skills-list { font-size: 13.5px; color: var(--mid); }
 
+.lang-meter {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 12px; padding: 1.4rem 1.6rem; margin-bottom: 1.25rem;
+}
+.meter-bar { display: flex; height: 12px; border-radius: 999px; overflow: hidden; gap: 2px; margin-bottom: 1rem; }
+.meter-seg { height: 100%; border-radius: 3px; }
+.meter-legend { display: flex; flex-wrap: wrap; gap: 1.1rem; }
+.legend-item { display: flex; align-items: center; gap: 7px; font-size: 12.5px; color: var(--mid); font-weight: 500; }
+.legend-dot { width: 11px; height: 11px; border-radius: 3px; }
+
+/* WHAT'S NEXT */
+.next-panel {
+  background: linear-gradient(135deg, #0F766E 0%, #0D9488 100%);
+  border-radius: 18px; padding: 2.2rem 2.2rem;
+  color: #fff; box-shadow: var(--shadow);
+}
+.next-panel .nx-flag {
+  font-family:'JetBrains Mono',monospace; font-size: 10.5px; letter-spacing: 0.12em;
+  text-transform: uppercase; color: #CCFBF1; margin-bottom: 0.9rem;
+}
+.next-panel h2 { font-family:'Noto Serif',serif; font-weight:500; font-size: 1.7rem; line-height: 1.12; margin-bottom: 0.9rem; }
+.next-panel p { color: rgba(240,253,250,0.92); font-size: 14.5px; max-width: 660px; }
+.next-panel p + p { margin-top: 0.8rem; }
+.next-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.4rem; }
+.next-tag {
+  font-family:'JetBrains Mono',monospace; font-size: 11px; font-weight: 500;
+  padding: 4px 11px; border-radius: 999px;
+  background: rgba(255,255,255,0.13); color: #fff; border: 1px solid rgba(255,255,255,0.22);
+}
+
 footer {
   border-top: 1px solid var(--border);
-  padding: 2rem; text-align: center;
+  padding: 2.25rem; text-align: center;
   font-size: 12.5px; color: var(--muted);
 }
 footer a { color: var(--muted); }
@@ -192,138 +342,176 @@ footer a:hover { color: var(--teal); }
 <body>
 
 <nav>
-  <span class="nav-name">imann128</span>
+  <span class="nav-name"><b>iman</b>naeem</span>
   <ul class="nav-links">
+    <li><a href="#tsauditor">TSAuditor</a></li>
     <li><a href="#projects">Projects</a></li>
-    <li><a href="#oss">Open Source</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="https://github.com/imann128" target="_blank">GitHub</a></li>
+    <li><a href="#oss" class="hide-sm">Open Source</a></li>
+    <li><a href="#skills" class="hide-sm">Skills</a></li>
+    <li><a href="https://github.com/imann128" target="_blank" rel="noopener">GitHub</a></li>
   </ul>
 </nav>
 
 <section class="hero">
   <p class="hero-eyebrow">NUST SEECS · Islamabad</p>
   <h1>Iman Naeem</h1>
-  <div class="stats-row">
-    <div class="stat-item"><div class="stat-num">6</div><div class="stat-label">Projects built</div></div>
-    <div class="stat-item"><div class="stat-num">200+</div><div class="stat-label">Docker pulls</div></div>
-    <div class="stat-item"><div class="stat-num">90+</div><div class="stat-label">GitHub cloners</div></div>
-    <div class="stat-item"><div class="stat-num">2</div><div class="stat-label">OSS contributions</div></div>
-  </div>
-  <p>Data Science student building at the intersection of engineering, analytics, and developer tooling. I work across Python, .NET, and React with a focus on Pakistani market data and production-grade systems.</p>
+  <p class="hero-lede">
+    I work primarily in data analytics and engineering — building dashboards, extracting
+    insights, and designing pipelines to understand what's really happening at the data
+    level. A lot of my work takes a Pakistan-centric angle, like my <em>OGDC equity-analysis
+    platform</em> built on 6+ years of PSX stock data. I build end-to-end data systems
+    spanning ETL, statistical inference, and machine learning, and full-stack apps across
+    Python, .NET, and React backed by SQLite, Redis, and PostgreSQL. Most of my focus right
+    now is <em>open source</em>: I authored <em>TSAuditor</em>, a time-series data-quality
+    library now on PyPI with 1.3k+ clones, and landed a merged contribution to
+    <em>statsmodels</em> — both rooted in one thing I care about: making sure data is
+    trustworthy before anyone models it.
+  </p>
   <div class="hero-links">
-    <a class="hero-link" href="https://github.com/imann128" target="_blank">github.com/imann128</a>
-    <a class="hero-link" href="https://dev.to/imann_12" target="_blank">dev.to/imann_12</a>
+    <a class="hero-link" href="https://github.com/imann128" target="_blank" rel="noopener">github.com/imann128</a>
+    <a class="hero-link" href="https://dev.to/imann_12" target="_blank" rel="noopener">dev.to/imann_12</a>
   </div>
 </section>
 
+<!-- FEATURED: TSAuditor -->
+<section class="section" id="tsauditor">
+  <div class="section-header">
+    <span class="section-label">Featured · Open-Source Library</span>
+    <div class="section-rule"></div>
+  </div>
+
+  <div class="featured">
+    <div class="featured-body">
+      <span class="featured-flag"><span class="pulse"></span> Live on PyPI · community-backed</span>
+      <h2>TSAuditor
+        <span class="sub">a time-series integrity & data-quality auditing framework</span>
+      </h2>
+      <p>
+        A lightweight, pure-Python library — <code>pip install tsauditor</code> — that scans
+        a DataFrame and returns a structured report of structural problems, anomalies, and its
+        core contribution: <strong>data-leakage detection</strong>, catching features that
+        secretly reproduce the target before they ever reach a model. It grew out of a real
+        bug in my OGDC equity model, where a same-day <code>ChangeP</code> feature inflated
+        accuracy to 99.68%; once the leak was removed, accuracy fell to a realistic ~70%.
+        TSAuditor exists so that class of mistake gets caught automatically.
+      </p>
+      <div class="chips">
+        <span class="chip">Leakage detection (AUC-based)</span>
+        <span class="chip">Frequency &amp; missing checks</span>
+        <span class="chip">Stationarity (ADF)</span>
+        <span class="chip">Anomaly &amp; spike flags</span>
+        <span class="chip">Rich + JSON reports</span>
+      </div>
+      <div class="traction">
+        <div class="traction-item"><div class="tn">4.8k</div><div class="tl">r/ML reach</div></div>
+        <div class="traction-item"><div class="tn">1.3k+</div><div class="tl">GitHub clones</div></div>
+      </div>
+      <p class="traction-note">Picked up solid traction in its first 48 hours on r/MachineLearning.</p>
+      <div class="featured-links">
+        <a class="btn btn-solid" href="https://github.com/imann128/tsauditor" target="_blank" rel="noopener">↗ GitHub</a>
+        <a class="btn btn-ghost" href="https://pypi.org/project/tsauditor/" target="_blank" rel="noopener">↗ PyPI</a>
+        <a class="btn btn-ghost" href="https://www.reddit.com/r/MachineLearning/comments/1ub15wf/tsauditor_a_timeseries_auditing_framework_p/" target="_blank" rel="noopener">↗ r/MachineLearning</a>
+      </div>
+    </div>
+
+    <div class="pypi">
+      <div class="pypi-head">
+        <div class="pypi-ver">tsauditor 0.1.2</div>
+        <span class="pypi-install">pip install tsauditor</span>
+        <div class="pypi-release"><b>✓ Latest release</b> Released Jun 17, 2026</div>
+      </div>
+      <div class="pypi-body">
+        <div class="pypi-desc">A data-quality auditing library for time-series tabular data in financial and sensor domains. Beta 0.1.2 · 93 tests passing · CI green across Python 3.9–3.14 on Linux, Windows & macOS.</div>
+        <div class="pypi-badges">
+          <span class="pypi-badge"><span class="k">CI</span><span class="v-ok">passing</span></span>
+          <span class="pypi-badge"><span class="k">codecov</span><span class="v-cov">85%</span></span>
+          <span class="pypi-badge"><span class="k">license</span><span class="v-mit">MIT</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
 <section class="section" id="projects">
   <div class="section-header">
-    <span class="section-label">Projects</span>
+    <span class="section-label">Selected Projects</span>
     <div class="section-rule"></div>
   </div>
   <div class="projects-grid">
 
-    <div class="project-card">
+    <div class="project-card tint-teal">
       <div class="card-img">
-        <div class="chrome-bar">
-          <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
-        </div>
-        <img src="assets/ogdc-1.png" alt="OGDC overview" />
+        <div class="chrome-bar"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div></div>
+        <img src="assets/ogdc-1.png" alt="OGDC equity analysis dashboard" />
       </div>
       <div class="card-body">
         <div class="card-title">OGDC Equity Analysis Platform</div>
-        <div class="card-desc">End-to-end pipeline on 6+ years of PSX data. GARCH volatility modelling, Bollinger Band backtesting, and sentiment analysis across 14 sources. Deployed React dashboard.</div>
+        <div class="card-desc">End-to-end pipeline over 6+ years of PSX data — GARCH volatility modelling, Bollinger-Band backtesting, and sentiment analysis across 14 sources, surfaced through a deployed React dashboard. Built with strict train/test discipline to avoid look-ahead leakage.</div>
         <div class="card-tags"><span class="tag">Python</span><span class="tag">React.js</span><span class="tag">GARCH</span><span class="tag">Recharts</span><span class="tag">Vercel</span></div>
         <div class="card-links">
-          <a class="card-link" href="https://github.com/imann128/ogdc-project" target="_blank">↗ GitHub</a>
-          <a class="card-link" href="https://ogdc-project.vercel.app" target="_blank">↗ Live</a>
+          <a class="card-link" href="https://github.com/imann128/ogdc-project" target="_blank" rel="noopener">↗ GitHub</a>
+          <a class="card-link" href="https://ogdc-project.vercel.app" target="_blank" rel="noopener">↗ Live</a>
         </div>
       </div>
     </div>
 
-    <div class="project-card">
+    <div class="project-card tint-indigo">
       <div class="card-img">
-        <div class="chrome-bar">
-          <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
-        </div>
-        <img src="assets/edumetrics-1.png" alt="EduMetrics analytics overview" />
-      </div>
-      <div class="card-body">
-        <div class="card-title">EduMetrics</div>
-        <div class="card-desc">Assessment analytics platform with Bloom's taxonomy classification, CTT item analysis (p-value, discrimination index), Cronbach's α reliability scoring, and mastery tracking.</div>
-        <div class="card-tags"><span class="tag">React 19</span><span class="tag">Vite</span><span class="tag">Recharts</span><span class="tag">CTT</span></div>
-        <div class="card-links">
-          <a class="card-link" href="https://github.com/imann128/EduMetrics" target="_blank">↗ GitHub</a>
-          <a class="card-link" href="https://edu-metrics-alpha.vercel.app" target="_blank">↗ Live</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="card-img">
-        <div class="chrome-bar">
-          <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
-        </div>
-        <img src="assets/anomaly-1.png" alt="IoT dashboard" />
+        <div class="chrome-bar"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div></div>
+        <img src="assets/anomaly-1.png" alt="IoT anomaly detection dashboard" />
       </div>
       <div class="card-body">
         <div class="card-title">IoT Sensor Anomaly Detection Pipeline</div>
-        <div class="card-desc">Dual-method anomaly detection on NASA SMAP/MSL telemetry — Isolation Forest and z-score rolling window — benchmarked against labelled ground truth with precision/recall per channel.</div>
+        <div class="card-desc">Dual-method anomaly detection on NASA SMAP/MSL telemetry — Isolation Forest and a z-score rolling window — benchmarked against labelled ground truth with precision/recall reported per channel. Containerised for reproducible runs.</div>
         <div class="card-tags"><span class="tag">Python</span><span class="tag">Isolation Forest</span><span class="tag">LSTM</span><span class="tag">Docker</span></div>
         <div class="card-links">
-          <a class="card-link" href="https://github.com/imann128" target="_blank">↗ GitHub</a>
+          <a class="card-link" href="https://github.com/imann128" target="_blank" rel="noopener">↗ GitHub</a>
         </div>
       </div>
     </div>
 
-    <div class="project-card">
+    <div class="project-card tint-violet">
       <div class="card-img">
-        <div class="chrome-bar">
-          <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
-        </div>
+        <div class="chrome-bar"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div></div>
         <img src="assets/devmetrics-1.png" alt="DevMetrics dashboard" />
       </div>
       <div class="card-body">
         <div class="card-title">DevMetrics</div>
-        <div class="card-desc">Self-hosted Git activity monitor with closed-loop telemetry. Streams live commit data via SignalR, computes craftsmanship signals, and exposes a Prometheus-compatible /metrics endpoint.</div>
+        <div class="card-desc">Self-hosted Git activity monitor with closed-loop telemetry. Streams live commit data over SignalR, computes craftsmanship signals, and exposes a Prometheus-compatible <code>/metrics</code> endpoint for dashboards and alerting.</div>
         <div class="card-tags"><span class="tag">.NET 8</span><span class="tag">SignalR</span><span class="tag">OpenAPI 3.0</span><span class="tag">Prometheus</span><span class="tag">Docker</span></div>
         <div class="card-links">
-          <a class="card-link" href="https://github.com/imann128/DevMetrics" target="_blank">↗ GitHub</a>
+          <a class="card-link" href="https://github.com/imann128/DevMetrics" target="_blank" rel="noopener">↗ GitHub</a>
         </div>
       </div>
     </div>
 
-    <div class="project-card">
+    <div class="project-card tint-rose">
       <div class="card-img">
-        <div class="chrome-bar">
-          <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
-        </div>
-        <img src="assets/relaycore-4.png" alt="RelayCore main dashboard" />
+        <div class="chrome-bar"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div></div>
+        <img src="assets/relaycore-4.png" alt="RelayCore dashboard" />
       </div>
       <div class="card-body">
         <div class="card-title">RelayCore</div>
-        <div class="card-desc">Production webhook relay with at-least-once delivery, Redis idempotent deduplication, JSONPath fan-out routing, HMAC-SHA256 verification, SSRF guard, and dead-letter queue.</div>
+        <div class="card-desc">Production webhook relay with at-least-once delivery, Redis-backed idempotent deduplication, JSONPath fan-out routing, HMAC-SHA256 verification, an SSRF guard, and a dead-letter queue for failed deliveries.</div>
         <div class="card-tags"><span class="tag">Python</span><span class="tag">Django</span><span class="tag">Celery</span><span class="tag">Redis</span><span class="tag">Docker</span></div>
         <div class="card-links">
-          <a class="card-link" href="https://github.com/imann128/RelayCore" target="_blank">↗ GitHub</a>
+          <a class="card-link" href="https://github.com/imann128/RelayCore" target="_blank" rel="noopener">↗ GitHub</a>
         </div>
       </div>
     </div>
 
-    <div class="project-card">
+    <div class="project-card tint-amber">
       <div class="card-img">
-        <div class="chrome-bar">
-          <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
-        </div>
-        <img src="assets/abtesting-1.png" alt="A/B Testing hero" />
+        <div class="chrome-bar"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div></div>
+        <img src="assets/abtesting-1.png" alt="A/B testing analytics dashboard" />
       </div>
       <div class="card-body">
-        <div class="card-title">Image Generation Prompts A/B Testing</div>
-        <div class="card-desc">Product intelligence dashboard on 50K generation events. Answers five business questions: which model ships, where latency costs retention, quality trends, optimal prompt length, keyword correlation.</div>
+        <div class="card-title">Image-Generation Prompts · A/B Testing</div>
+        <div class="card-desc">Product-intelligence dashboard over 50K generation events, answering five business questions: which model ships, where latency costs retention, quality trends, optimal prompt length, and keyword–quality correlation.</div>
         <div class="card-tags"><span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">Plotly</span><span class="tag">scipy</span><span class="tag">SQLite</span></div>
         <div class="card-links">
-          <a class="card-link" href="https://github.com/imann128/image-generation-A-B-testing" target="_blank">↗ GitHub</a>
+          <a class="card-link" href="https://github.com/imann128/image-generation-A-B-testing" target="_blank" rel="noopener">↗ GitHub</a>
         </div>
       </div>
     </div>
@@ -331,9 +519,10 @@ footer a:hover { color: var(--teal); }
   </div>
 </section>
 
+<!-- OPEN SOURCE -->
 <section class="section" id="oss">
   <div class="section-header">
-    <span class="section-label">Open Source</span>
+    <span class="section-label">Open-Source Contributions</span>
     <div class="section-rule"></div>
   </div>
   <div class="oss-list">
@@ -341,43 +530,86 @@ footer a:hover { color: var(--teal); }
       <span class="oss-logo">statsmodels</span>
       <div>
         <div class="oss-title">Allow seasonal-differencing-only ARIMA models with non-seasonal estimators</div>
-        <div class="oss-desc">Addresses Issue #6159. Enables ARIMA configurations where seasonal differencing is applied without requiring seasonal AR/MA terms.</div>
-        <div class="oss-status">PR #9811 · All CI checks passing · Awaiting maintainer approval</div>
-      </div>
-    </div>
-    <div class="oss-item">
-      <span class="oss-logo">dagster</span>
-      <div>
-        <div class="oss-title">Support Ed25519 and ECDSA keys in SSHResource key_string parameter</div>
-        <div class="oss-desc">Replaces hardcoded RSA-only key loading with a try-each-class loop supporting RSA, Ed25519, and ECDSA key types.</div>
-        <div class="oss-status">PR #33909 · Under review</div>
+        <div class="oss-desc">Addresses Issue #6159 — enables ARIMA configurations where seasonal differencing is applied without requiring seasonal AR/MA terms.</div>
+        <div class="oss-meta">
+          <span class="badge-merged">
+            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M5 3.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm0 2.122a2.25 2.25 0 1 0-1.5 0v5.256a2.25 2.25 0 1 0 1.5 0V8.5h1.5a3.5 3.5 0 0 0 3.5-3.5V4.372a2.25 2.25 0 1 0-1.5 0V5a2 2 0 0 1-2 2H5V5.372ZM4.25 12.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5ZM10.5 3.25a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Z"/></svg>
+            Merged into main
+          </span>
+          <span class="badge-shark">★ Pull Shark</span>
+          <span class="oss-status">PR #9811</span>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- SKILLS -->
 <section class="section" id="skills">
   <div class="section-header">
     <span class="section-label">Skills</span>
     <div class="section-rule"></div>
   </div>
+
+  <div class="lang-meter">
+    <div class="meter-bar">
+      <div class="meter-seg" style="width:42%; background:#3776AB;"></div>
+      <div class="meter-seg" style="width:26%; background:#F0B429;"></div>
+      <div class="meter-seg" style="width:20%; background:#7C3AED;"></div>
+      <div class="meter-seg" style="width:12%; background:#E76F00;"></div>
+    </div>
+    <div class="meter-legend">
+      <span class="legend-item"><span class="legend-dot" style="background:#3776AB;"></span> Python</span>
+      <span class="legend-item"><span class="legend-dot" style="background:#F0B429;"></span> JavaScript / React</span>
+      <span class="legend-item"><span class="legend-dot" style="background:#7C3AED;"></span> C# / .NET</span>
+      <span class="legend-item"><span class="legend-dot" style="background:#E76F00;"></span> Java</span>
+    </div>
+  </div>
+
   <div class="skills-block">
-    <div class="skills-cat">Languages</div>
-    <div class="skills-list">Python, C# / .NET, JavaScript / React.js, Java</div>
     <div class="skills-cat">Analytics</div>
-    <div class="skills-list">pandas, scikit-learn, scipy, Plotly, Streamlit, Recharts, GARCH, Isolation Forest</div>
+    <div class="skills-list">pandas, NumPy, scikit-learn, scipy, statsmodels, Plotly, Streamlit, Recharts, GARCH, Isolation Forest</div>
     <div class="skills-cat">Backend</div>
     <div class="skills-list">Django, Flask, .NET 8, SignalR, Celery, EF Core, OpenAPI 3.0 / Swagger</div>
     <div class="skills-cat">Infra</div>
-    <div class="skills-list">Docker, Redis, Prometheus, PostgreSQL, MySQL, SQLite, GitHub Actions</div>
+    <div class="skills-list">Docker, Redis, Prometheus, PostgreSQL, MySQL, SQLite, GitHub Actions, PyPI packaging</div>
     <div class="skills-cat">Writing</div>
     <div class="skills-list">Technical blog posts, developer documentation, SEO — dev.to/imann_12</div>
   </div>
 </section>
 
+<!-- WHAT'S NEXT -->
+<section class="section" id="next">
+  <div class="section-header">
+    <span class="section-label">What's Next</span>
+    <div class="section-rule"></div>
+  </div>
+  <div class="next-panel">
+    <div class="nx-flag">Current focus</div>
+    <h2>Bringing data-integrity discipline to fintech</h2>
+    <p>
+      I'm now working on fintech projects, where broken chronological continuity and
+      subtle data leakage don't just hurt accuracy — they produce backtests that lie.
+      It's the natural next step from TSAuditor: applying the same auditing rigour to
+      financial time-series, market-data pipelines, and risk and trading analytics.
+    </p>
+    <p>
+      The goal is reliable, reproducible pipelines where every model is trained on data
+      that has been audited before it's trusted.
+    </p>
+    <div class="next-tags">
+      <span class="next-tag">Financial time-series</span>
+      <span class="next-tag">Market-data pipelines</span>
+      <span class="next-tag">Risk &amp; trading analytics</span>
+      <span class="next-tag">Reproducible backtesting</span>
+    </div>
+  </div>
+</section>
+
 <footer>
   <p>Iman Naeem · NUST SEECS, Islamabad ·
-    <a href="https://github.com/imann128" target="_blank">GitHub</a> 
+    <a href="https://github.com/imann128" target="_blank" rel="noopener">GitHub</a> ·
+    <a href="https://dev.to/imann_12" target="_blank" rel="noopener">dev.to</a>
   </p>
 </footer>
 
