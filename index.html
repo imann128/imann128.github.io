@@ -2,883 +2,523 @@
 <html><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <title>Iman Naeem — Portfolio</title>
-
-  <meta name="description" content="Iman Naeem, Data Science student building production-grade data and ML tooling. Author of TSAuditor, contributor to statsmodels, now focused on fintech.">
-  <link rel="preconnect" href="https://fonts.googleapis.com/">
-  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-  <style>/* cyrillic-ext */
+<meta name="description" content="Iman Naeem: full-stack &amp; systems engineer, edge &amp; cloud computing.">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<style>/* cyrillic-ext */
 @font-face {
-  font-family: 'JetBrains Mono';
+  font-family: 'Press Start 2P';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("assets/db78e8af-0dff-443c-b411-f5dc43479d7b.woff2") format('woff2');
+  src: url("assets/press-start-2p-cyrillic-ext.woff2") format('woff2');
   unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
 }
 /* cyrillic */
 @font-face {
-  font-family: 'JetBrains Mono';
+  font-family: 'Press Start 2P';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("assets/8c7142dd-dce3-4a65-88ae-d221d90f8f17.woff2") format('woff2');
+  src: url("assets/press-start-2p-cyrillic.woff2") format('woff2');
   unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 /* greek */
 @font-face {
-  font-family: 'JetBrains Mono';
+  font-family: 'Press Start 2P';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("assets/4ce89ca6-c080-40da-bfa3-ae65a7a66ddd.woff2") format('woff2');
+  src: url("assets/press-start-2p-greek.woff2") format('woff2');
   unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
 }
-/* vietnamese */
-@font-face {
-  font-family: 'JetBrains Mono';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/1f3a2044-edb9-416f-8a78-54260046872a.woff2") format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
-}
 /* latin-ext */
 @font-face {
-  font-family: 'JetBrains Mono';
+  font-family: 'Press Start 2P';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("assets/d927d198-1df0-42fa-8563-bb0f0a312412.woff2") format('woff2');
+  src: url("assets/press-start-2p-latin-ext.woff2") format('woff2');
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
 @font-face {
-  font-family: 'JetBrains Mono';
+  font-family: 'Press Start 2P';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("assets/ca6d3af8-cc68-4d00-9b54-0c8ef6a3879b.woff2") format('woff2');
+  src: url("assets/press-start-2p-latin.woff2") format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-/* cyrillic-ext */
-@font-face {
-  font-family: 'JetBrains Mono';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("assets/db78e8af-0dff-443c-b411-f5dc43479d7b.woff2") format('woff2');
-  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'JetBrains Mono';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("assets/8c7142dd-dce3-4a65-88ae-d221d90f8f17.woff2") format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* greek */
-@font-face {
-  font-family: 'JetBrains Mono';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("assets/4ce89ca6-c080-40da-bfa3-ae65a7a66ddd.woff2") format('woff2');
-  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
-}
 /* vietnamese */
 @font-face {
-  font-family: 'JetBrains Mono';
+  font-family: 'VT323';
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   font-display: swap;
-  src: url("assets/1f3a2044-edb9-416f-8a78-54260046872a.woff2") format('woff2');
+  src: url("assets/vt323-vietnamese.woff2") format('woff2');
   unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
 }
 /* latin-ext */
 @font-face {
-  font-family: 'JetBrains Mono';
+  font-family: 'VT323';
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   font-display: swap;
-  src: url("assets/d927d198-1df0-42fa-8563-bb0f0a312412.woff2") format('woff2');
+  src: url("assets/vt323-latin-ext.woff2") format('woff2');
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
 @font-face {
-  font-family: 'JetBrains Mono';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("assets/ca6d3af8-cc68-4d00-9b54-0c8ef6a3879b.woff2") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* cyrillic-ext */
-@font-face {
-  font-family: 'Lora';
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/08d395ad-d655-4083-b762-ea67a5534bf0.woff2") format('woff2');
-  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'Lora';
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/b4d64b53-b997-4bae-b6ad-28070549aa99.woff2") format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* math */
-@font-face {
-  font-family: 'Lora';
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/e4fe1d5a-835a-4d03-9853-f1095f49b0b3.woff2") format('woff2');
-  unicode-range: U+0302-0303, U+0305, U+0307-0308, U+0310, U+0312, U+0315, U+031A, U+0326-0327, U+032C, U+032F-0330, U+0332-0333, U+0338, U+033A, U+0346, U+034D, U+0391-03A1, U+03A3-03A9, U+03B1-03C9, U+03D1, U+03D5-03D6, U+03F0-03F1, U+03F4-03F5, U+2016-2017, U+2034-2038, U+203C, U+2040, U+2043, U+2047, U+2050, U+2057, U+205F, U+2070-2071, U+2074-208E, U+2090-209C, U+20D0-20DC, U+20E1, U+20E5-20EF, U+2100-2112, U+2114-2115, U+2117-2121, U+2123-214F, U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211, U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321, U+2336-237A, U+237C, U+2395, U+239B-23B7, U+23D0, U+23DC-23E1, U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE, U+3030, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE00-1EEFF;
-}
-/* symbols */
-@font-face {
-  font-family: 'Lora';
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/e9c673dd-c48c-471d-8d87-97f41ff56593.woff2") format('woff2');
-  unicode-range: U+0001-000C, U+000E-001F, U+007F-009F, U+20DD-20E0, U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F, U+2440-244A, U+2460-24FF, U+25A0-27BF, U+2800-28FF, U+2921-2922, U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+4DC0-4DFF, U+FFF9-FFFB, U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB, U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0FF, U+1F100-1F1AD, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E, U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F, U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE, U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415, U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449, U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3, U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF, U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE, U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A, U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691, U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC, U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3, U+1F6F7-1F6FC, U+1F700-1F7FF, U+1F800-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8BB, U+1F8C0-1F8C1, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FA89, U+1FA8F-1FAC6, U+1FACE-1FADC, U+1FADF-1FAE9, U+1FAF0-1FAF8, U+1FB00-1FBFF;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Lora';
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/454faca4-7c1e-4f19-92a4-8fd5eb7048ef.woff2") format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Lora';
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/4e0120f9-1408-4219-b1ea-bb3b4b4c95a1.woff2") format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Lora';
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/2a87d5cf-fb07-43ea-bab4-9c1a21170af3.woff2") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* cyrillic-ext */
-@font-face {
-  font-family: 'Lora';
+  font-family: 'VT323';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("assets/e415af96-f2e6-48bb-adff-4843ecafbbce.woff2") format('woff2');
-  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'Lora';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/23f40469-039f-4848-a528-77d89552f778.woff2") format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* math */
-@font-face {
-  font-family: 'Lora';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/8a8ea8a0-409a-418d-954c-bdc8a197500f.woff2") format('woff2');
-  unicode-range: U+0302-0303, U+0305, U+0307-0308, U+0310, U+0312, U+0315, U+031A, U+0326-0327, U+032C, U+032F-0330, U+0332-0333, U+0338, U+033A, U+0346, U+034D, U+0391-03A1, U+03A3-03A9, U+03B1-03C9, U+03D1, U+03D5-03D6, U+03F0-03F1, U+03F4-03F5, U+2016-2017, U+2034-2038, U+203C, U+2040, U+2043, U+2047, U+2050, U+2057, U+205F, U+2070-2071, U+2074-208E, U+2090-209C, U+20D0-20DC, U+20E1, U+20E5-20EF, U+2100-2112, U+2114-2115, U+2117-2121, U+2123-214F, U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211, U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321, U+2336-237A, U+237C, U+2395, U+239B-23B7, U+23D0, U+23DC-23E1, U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE, U+3030, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE00-1EEFF;
-}
-/* symbols */
-@font-face {
-  font-family: 'Lora';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/a0f2462e-c654-45e7-9a9d-88191f5a2f85.woff2") format('woff2');
-  unicode-range: U+0001-000C, U+000E-001F, U+007F-009F, U+20DD-20E0, U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F, U+2440-244A, U+2460-24FF, U+25A0-27BF, U+2800-28FF, U+2921-2922, U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+4DC0-4DFF, U+FFF9-FFFB, U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB, U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0FF, U+1F100-1F1AD, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E, U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F, U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE, U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415, U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449, U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3, U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF, U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE, U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A, U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691, U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC, U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3, U+1F6F7-1F6FC, U+1F700-1F7FF, U+1F800-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8BB, U+1F8C0-1F8C1, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FA89, U+1FA8F-1FAC6, U+1FACE-1FADC, U+1FADF-1FAE9, U+1FAF0-1FAF8, U+1FB00-1FBFF;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Lora';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/f6e10f8d-8a95-4258-b2c1-a73a50363cdb.woff2") format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Lora';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/2e2830d2-9307-4cd0-9eac-d2d8c43cfde7.woff2") format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Lora';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/40163523-e738-421c-b9ad-48abeedcfe0f.woff2") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* cyrillic-ext */
-@font-face {
-  font-family: 'Lora';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("assets/e415af96-f2e6-48bb-adff-4843ecafbbce.woff2") format('woff2');
-  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'Lora';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("assets/23f40469-039f-4848-a528-77d89552f778.woff2") format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* math */
-@font-face {
-  font-family: 'Lora';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("assets/8a8ea8a0-409a-418d-954c-bdc8a197500f.woff2") format('woff2');
-  unicode-range: U+0302-0303, U+0305, U+0307-0308, U+0310, U+0312, U+0315, U+031A, U+0326-0327, U+032C, U+032F-0330, U+0332-0333, U+0338, U+033A, U+0346, U+034D, U+0391-03A1, U+03A3-03A9, U+03B1-03C9, U+03D1, U+03D5-03D6, U+03F0-03F1, U+03F4-03F5, U+2016-2017, U+2034-2038, U+203C, U+2040, U+2043, U+2047, U+2050, U+2057, U+205F, U+2070-2071, U+2074-208E, U+2090-209C, U+20D0-20DC, U+20E1, U+20E5-20EF, U+2100-2112, U+2114-2115, U+2117-2121, U+2123-214F, U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211, U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321, U+2336-237A, U+237C, U+2395, U+239B-23B7, U+23D0, U+23DC-23E1, U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE, U+3030, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE00-1EEFF;
-}
-/* symbols */
-@font-face {
-  font-family: 'Lora';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("assets/a0f2462e-c654-45e7-9a9d-88191f5a2f85.woff2") format('woff2');
-  unicode-range: U+0001-000C, U+000E-001F, U+007F-009F, U+20DD-20E0, U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F, U+2440-244A, U+2460-24FF, U+25A0-27BF, U+2800-28FF, U+2921-2922, U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+4DC0-4DFF, U+FFF9-FFFB, U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB, U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0FF, U+1F100-1F1AD, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E, U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F, U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE, U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415, U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449, U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3, U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF, U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE, U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A, U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691, U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC, U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3, U+1F6F7-1F6FC, U+1F700-1F7FF, U+1F800-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8BB, U+1F8C0-1F8C1, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FA89, U+1FA8F-1FAC6, U+1FACE-1FADC, U+1FADF-1FAE9, U+1FAF0-1FAF8, U+1FB00-1FBFF;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Lora';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("assets/f6e10f8d-8a95-4258-b2c1-a73a50363cdb.woff2") format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Lora';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("assets/2e2830d2-9307-4cd0-9eac-d2d8c43cfde7.woff2") format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Lora';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("assets/40163523-e738-421c-b9ad-48abeedcfe0f.woff2") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* cyrillic-ext */
-@font-face {
-  font-family: 'Lora';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("assets/e415af96-f2e6-48bb-adff-4843ecafbbce.woff2") format('woff2');
-  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'Lora';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("assets/23f40469-039f-4848-a528-77d89552f778.woff2") format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* math */
-@font-face {
-  font-family: 'Lora';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("assets/8a8ea8a0-409a-418d-954c-bdc8a197500f.woff2") format('woff2');
-  unicode-range: U+0302-0303, U+0305, U+0307-0308, U+0310, U+0312, U+0315, U+031A, U+0326-0327, U+032C, U+032F-0330, U+0332-0333, U+0338, U+033A, U+0346, U+034D, U+0391-03A1, U+03A3-03A9, U+03B1-03C9, U+03D1, U+03D5-03D6, U+03F0-03F1, U+03F4-03F5, U+2016-2017, U+2034-2038, U+203C, U+2040, U+2043, U+2047, U+2050, U+2057, U+205F, U+2070-2071, U+2074-208E, U+2090-209C, U+20D0-20DC, U+20E1, U+20E5-20EF, U+2100-2112, U+2114-2115, U+2117-2121, U+2123-214F, U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211, U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321, U+2336-237A, U+237C, U+2395, U+239B-23B7, U+23D0, U+23DC-23E1, U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE, U+3030, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE00-1EEFF;
-}
-/* symbols */
-@font-face {
-  font-family: 'Lora';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("assets/a0f2462e-c654-45e7-9a9d-88191f5a2f85.woff2") format('woff2');
-  unicode-range: U+0001-000C, U+000E-001F, U+007F-009F, U+20DD-20E0, U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F, U+2440-244A, U+2460-24FF, U+25A0-27BF, U+2800-28FF, U+2921-2922, U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+4DC0-4DFF, U+FFF9-FFFB, U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB, U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0FF, U+1F100-1F1AD, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E, U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F, U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE, U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415, U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449, U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3, U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF, U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE, U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A, U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691, U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC, U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3, U+1F6F7-1F6FC, U+1F700-1F7FF, U+1F800-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8BB, U+1F8C0-1F8C1, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FA89, U+1FA8F-1FAC6, U+1FACE-1FADC, U+1FADF-1FAE9, U+1FAF0-1FAF8, U+1FB00-1FBFF;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Lora';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("assets/f6e10f8d-8a95-4258-b2c1-a73a50363cdb.woff2") format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Lora';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("assets/2e2830d2-9307-4cd0-9eac-d2d8c43cfde7.woff2") format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Lora';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("assets/40163523-e738-421c-b9ad-48abeedcfe0f.woff2") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* cyrillic-ext */
-@font-face {
-  font-family: 'Noto Serif';
-  font-style: normal;
-  font-weight: 500;
-  font-stretch: 100%;
-  font-display: swap;
-  src: url("assets/7e72d65e-18df-4c07-bdd6-8f7893880319.woff2") format('woff2');
-  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'Noto Serif';
-  font-style: normal;
-  font-weight: 500;
-  font-stretch: 100%;
-  font-display: swap;
-  src: url("assets/c645b01b-427d-4892-9199-ab8b33fe73f5.woff2") format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* greek-ext */
-@font-face {
-  font-family: 'Noto Serif';
-  font-style: normal;
-  font-weight: 500;
-  font-stretch: 100%;
-  font-display: swap;
-  src: url("assets/60a374ae-97ba-4d40-b411-10903260a587.woff2") format('woff2');
-  unicode-range: U+1F00-1FFF;
-}
-/* greek */
-@font-face {
-  font-family: 'Noto Serif';
-  font-style: normal;
-  font-weight: 500;
-  font-stretch: 100%;
-  font-display: swap;
-  src: url("assets/20639dac-c1f4-4051-bac4-57c8265b4b65.woff2") format('woff2');
-  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
-}
-/* math */
-@font-face {
-  font-family: 'Noto Serif';
-  font-style: normal;
-  font-weight: 500;
-  font-stretch: 100%;
-  font-display: swap;
-  src: url("assets/04f9500d-b13c-49de-afba-4cb121bf770d.woff2") format('woff2');
-  unicode-range: U+0302-0303, U+0305, U+0307-0308, U+0310, U+0312, U+0315, U+031A, U+0326-0327, U+032C, U+032F-0330, U+0332-0333, U+0338, U+033A, U+0346, U+034D, U+0391-03A1, U+03A3-03A9, U+03B1-03C9, U+03D1, U+03D5-03D6, U+03F0-03F1, U+03F4-03F5, U+2016-2017, U+2034-2038, U+203C, U+2040, U+2043, U+2047, U+2050, U+2057, U+205F, U+2070-2071, U+2074-208E, U+2090-209C, U+20D0-20DC, U+20E1, U+20E5-20EF, U+2100-2112, U+2114-2115, U+2117-2121, U+2123-214F, U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211, U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321, U+2336-237A, U+237C, U+2395, U+239B-23B7, U+23D0, U+23DC-23E1, U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE, U+3030, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE00-1EEFF;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Noto Serif';
-  font-style: normal;
-  font-weight: 500;
-  font-stretch: 100%;
-  font-display: swap;
-  src: url("assets/7d1812f0-43d5-4104-b7e0-eae62e5759bd.woff2") format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Noto Serif';
-  font-style: normal;
-  font-weight: 500;
-  font-stretch: 100%;
-  font-display: swap;
-  src: url("assets/c34d5a00-d7d7-4b6c-9b0f-9a860a69cd2c.woff2") format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Noto Serif';
-  font-style: normal;
-  font-weight: 500;
-  font-stretch: 100%;
-  font-display: swap;
-  src: url("assets/1a76b9e5-4283-412c-bfed-08a37926d4d8.woff2") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* cyrillic-ext */
-@font-face {
-  font-family: 'Noto Serif';
-  font-style: normal;
-  font-weight: 600;
-  font-stretch: 100%;
-  font-display: swap;
-  src: url("assets/7e72d65e-18df-4c07-bdd6-8f7893880319.woff2") format('woff2');
-  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'Noto Serif';
-  font-style: normal;
-  font-weight: 600;
-  font-stretch: 100%;
-  font-display: swap;
-  src: url("assets/c645b01b-427d-4892-9199-ab8b33fe73f5.woff2") format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* greek-ext */
-@font-face {
-  font-family: 'Noto Serif';
-  font-style: normal;
-  font-weight: 600;
-  font-stretch: 100%;
-  font-display: swap;
-  src: url("assets/60a374ae-97ba-4d40-b411-10903260a587.woff2") format('woff2');
-  unicode-range: U+1F00-1FFF;
-}
-/* greek */
-@font-face {
-  font-family: 'Noto Serif';
-  font-style: normal;
-  font-weight: 600;
-  font-stretch: 100%;
-  font-display: swap;
-  src: url("assets/20639dac-c1f4-4051-bac4-57c8265b4b65.woff2") format('woff2');
-  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
-}
-/* math */
-@font-face {
-  font-family: 'Noto Serif';
-  font-style: normal;
-  font-weight: 600;
-  font-stretch: 100%;
-  font-display: swap;
-  src: url("assets/04f9500d-b13c-49de-afba-4cb121bf770d.woff2") format('woff2');
-  unicode-range: U+0302-0303, U+0305, U+0307-0308, U+0310, U+0312, U+0315, U+031A, U+0326-0327, U+032C, U+032F-0330, U+0332-0333, U+0338, U+033A, U+0346, U+034D, U+0391-03A1, U+03A3-03A9, U+03B1-03C9, U+03D1, U+03D5-03D6, U+03F0-03F1, U+03F4-03F5, U+2016-2017, U+2034-2038, U+203C, U+2040, U+2043, U+2047, U+2050, U+2057, U+205F, U+2070-2071, U+2074-208E, U+2090-209C, U+20D0-20DC, U+20E1, U+20E5-20EF, U+2100-2112, U+2114-2115, U+2117-2121, U+2123-214F, U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211, U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321, U+2336-237A, U+237C, U+2395, U+239B-23B7, U+23D0, U+23DC-23E1, U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE, U+3030, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE00-1EEFF;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Noto Serif';
-  font-style: normal;
-  font-weight: 600;
-  font-stretch: 100%;
-  font-display: swap;
-  src: url("assets/7d1812f0-43d5-4104-b7e0-eae62e5759bd.woff2") format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Noto Serif';
-  font-style: normal;
-  font-weight: 600;
-  font-stretch: 100%;
-  font-display: swap;
-  src: url("assets/c34d5a00-d7d7-4b6c-9b0f-9a860a69cd2c.woff2") format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Noto Serif';
-  font-style: normal;
-  font-weight: 600;
-  font-stretch: 100%;
-  font-display: swap;
-  src: url("assets/1a76b9e5-4283-412c-bfed-08a37926d4d8.woff2") format('woff2');
+  src: url("assets/vt323-latin.woff2") format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 </style>
-  <style>
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0; padding: 0;
-      font-family: 'Lora', Georgia, serif;
-      background-color: #F5F3E8;
-      background-image:
-        linear-gradient(rgba(20,83,45,0.06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(20,83,45,0.06) 1px, transparent 1px);
-      background-size: 26px 26px;
-      color: #142420;
-      -webkit-font-smoothing: antialiased;
-    }
-  </style>
-
 <style>
-.hov1{font-size:13px; color:#CFE8D8; font-weight:500; text-decoration:none;}
-.hov1:hover{color:#7EDCA8;}
-.hov2{font-size:13px; color:#CFE8D8; font-weight:500; text-decoration:none;}
-.hov2:hover{color:#7EDCA8;}
-.hov3{font-size:13px; color:#CFE8D8; font-weight:500; text-decoration:none;}
-.hov3:hover{color:#7EDCA8;}
-.hov4{font-size:13px; color:#CFE8D8; font-weight:500; text-decoration:none;}
-.hov4:hover{color:#7EDCA8;}
-.hov5{font-size:13px; color:#CFE8D8; font-weight:500; text-decoration:none;}
-.hov5:hover{color:#7EDCA8;}
-.hov6{font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:500; padding:0.45rem 0.9rem; border:1px solid #DCE5DA; border-radius:8px; color:#3A4F44; background:#FFFFFF; text-decoration:none;}
-.hov6:hover{border-color:#1F7A4D; color:#1F7A4D;}
-.hov7{font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:500; padding:0.45rem 0.9rem; border:1px solid #DCE5DA; border-radius:8px; color:#3A4F44; background:#FFFFFF; text-decoration:none;}
-.hov7:hover{border-color:#1F7A4D; color:#1F7A4D;}
-.hov8{display:inline-flex; align-items:center; gap:6px; font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:500; padding:0.5rem 0.95rem; border-radius:8px; background:#1F7A4D; color:#fff; text-decoration:none;}
-.hov8:hover{opacity:0.92; transform:translateY(-1px);}
-.hov9{display:inline-flex; align-items:center; gap:6px; font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:500; padding:0.5rem 0.95rem; border-radius:8px; background:#FFFFFF; color:#3A4F44; border:1px solid #DCE5DA; text-decoration:none;}
-.hov9:hover{border-color:#1F7A4D; color:#1F7A4D;}
-.hov10{display:inline-flex; align-items:center; gap:6px; font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:500; padding:0.5rem 0.95rem; border-radius:8px; background:#FFFFFF; color:#3A4F44; border:1px solid #DCE5DA; text-decoration:none;}
-.hov10:hover{border-color:#1F7A4D; color:#1F7A4D;}
-.hov11{font-family:'JetBrains Mono',monospace; font-size:11.5px; font-weight:500; color:#6C8177; text-decoration:none;}
-.hov11:hover{color:#1F7A4D;}
-.hov12{font-family:'JetBrains Mono',monospace; font-size:11.5px; font-weight:500; color:#6C8177; text-decoration:none;}
-.hov12:hover{color:#1F7A4D;}
-.hov13{font-family:'JetBrains Mono',monospace; font-size:11.5px; font-weight:500; color:#6C8177; text-decoration:none;}
-.hov13:hover{color:#1F7A4D;}
-.hov14{font-family:'JetBrains Mono',monospace; font-size:11.5px; font-weight:500; color:#6C8177; text-decoration:none;}
-.hov14:hover{color:#1F7A4D;}
-.hov15{font-family:'JetBrains Mono',monospace; font-size:11.5px; font-weight:500; color:#6C8177; text-decoration:none;}
-.hov15:hover{color:#1F7A4D;}
-.hov16{font-family:'JetBrains Mono',monospace; font-size:11.5px; font-weight:500; color:#6C8177; text-decoration:none;}
-.hov16:hover{color:#1F7A4D;}
-.hov17{color:#6C8177;}
-.hov17:hover{color:#1F7A4D;}
-.hov18{color:#6C8177;}
-.hov18:hover{color:#1F7A4D;}
-.hov1, .hov2, .hov3, .hov4, .hov5, .hov6, .hov7, .hov8, .hov9, .hov10, .hov11, .hov12, .hov13, .hov14, .hov15, .hov16, .hov17, .hov18 { transition: color 0.15s ease, border-color 0.15s ease, opacity 0.15s ease, transform 0.15s ease; }
+  html { scroll-behavior: smooth; }
+  body { margin:0; padding:0; -webkit-font-smoothing:antialiased; background:#c7ded0; }
+  .retro-scroll-c::-webkit-scrollbar { width:14px; height:14px; }
+  .retro-scroll-c::-webkit-scrollbar-track { background:#dfe9e2; }
+  .retro-scroll-c::-webkit-scrollbar-thumb { background:#9bc7aa; border:1px solid #14251c; }
+
+  /* Responsive swap: desktop "OS scene" vs mobile icon nav, replacing what
+     used to be a JS matchMedia toggle with plain CSS so this works with
+     zero JavaScript and zero runtime dependency. */
+  .mobile-nav   { display: none; }
+  .desktop-scene { display: block; }
+  .proj-desktop { display: block; }
+  .proj-mobile  { display: none; }
+  .sys-status   { display: inline; }
+
+  @media (max-width: 760px) {
+    .mobile-nav    { display: flex; }
+    .desktop-scene { display: none; }
+    .proj-desktop  { display: none; }
+    .proj-mobile   { display: block; }
+    .sys-status    { display: none; }
+  }
+
+  /* "Portfolio" folder: glows to invite a click, then reveals the rest of
+     the page. Plain CSS animation + a small vanilla-JS toggle below —
+     no framework, nothing that can go stale. */
+  @keyframes folder-glow {
+    0%, 100% { box-shadow: 0 0 0 1px #14251c, 0 0 0 0 rgba(224,168,58,0.7); }
+    50%      { box-shadow: 0 0 0 1px #14251c, 0 0 12px 5px rgba(224,168,58,0.85); }
+  }
+  .portfolio-launcher .folder-icon { animation: folder-glow 1.8s ease-in-out infinite; }
+  .portfolio-launcher.opened .folder-icon {
+    animation: none;
+    box-shadow: 0 0 0 1px #14251c, 0 0 10px 3px rgba(47,158,92,0.7);
+  }
+
+  #portfolio-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height .6s ease, opacity .5s ease;
+  }
+  #portfolio-content.open { opacity: 1; }
 </style>
 </head>
 <body>
 
+<div style="min-height:100vh; background:#c7ded0; padding:18px 16px 24px; display:flex; justify-content:center;">
+<section style="width:100%; max-width:1100px; position:relative;">
 
+  <div style="--desktop:#9bc7aa; --bar:#14251c; --bartext:#eafaf0; --win:#f4f8f0; --wintext:#1b2a20; --accent:#1f7a4d; --accent2:#2f9e5c; --muted:#5c7a68;
+              background:var(--desktop); border:3px solid #14251c; position:relative; overflow:hidden; font-family:Tahoma,Verdana,sans-serif; color:var(--wintext);
+              cursor:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Cpolygon points='0,0 0,11 3,9 5,14 7,13 4,8 8,8' fill='black' stroke='white'/%3E%3C/svg%3E&quot;) 0 0, auto;">
 
-<div style="min-height:100vh;">
+    <!-- Top menu / status bar -->
+    <div style="background:var(--bar); color:var(--bartext); display:flex; align-items:center; gap:12px; padding:0 12px; height:34px;">
+      <span style="width:14px; height:14px; background:var(--accent2); display:inline-block; flex-shrink:0;"></span>
+      <span style="font-family:'Press Start 2P',monospace; font-size:10px; flex-shrink:0;">IMAN OS</span>
+      <span style="width:16px; height:12px; background:var(--win); box-shadow:0 0 0 1px #000; flex-shrink:0;"></span>
+      <span style="width:16px; height:12px; background:var(--win); box-shadow:0 0 0 1px #000; flex-shrink:0;"></span>
+      <span style="width:16px; height:12px; background:#cfe8d8; box-shadow:0 0 0 1px #000; flex-shrink:0;"></span>
+      <div style="flex:1;"></div>
+      <span class="sys-status" style="font-family:'VT323',monospace; font-size:15px; color:#9fd9b4; white-space:nowrap;">SYS: uptime 99.99% · latency 18ms</span>
+      <span style="width:14px; height:14px; background:#c0503f; display:inline-block; flex-shrink:0;"></span>
+    </div>
 
-  <nav style="position:sticky; top:0; z-index:100; background:#1F7A4D; padding:0 1.75rem; display:flex; align-items:center; justify-content:space-between; height:56px;">
-    <span style="font-family:'JetBrains Mono',monospace; font-size:13px; font-weight:500; color:#EAF5EE;">iman<b style="color:#7EDCA8;">naeem</b></span>
-    <ul style="display:flex; gap:1.5rem; list-style:none; margin:0; padding:0;">
-      <li><a href="#tsauditor" class="hov1">TSAuditor</a></li>
-      <li><a href="#projects" class="hov2">Projects</a></li>
-      <li><a href="#oss" class="hov3">Open Source</a></li>
-      <li><a href="#skills" class="hov4">Skills</a></li>
-      <li><a href="https://github.com/imann128" target="_blank" rel="noopener" class="hov5">GitHub</a></li>
-    </ul>
-  </nav>
+    <!-- Mobile icon nav -->
+    <div class="mobile-nav" style="flex-wrap:wrap; gap:20px; padding:22px 20px;">
+      <a href="#portfolio-content" class="portfolio-launcher" style="display:flex; flex-direction:column; align-items:center; gap:6px; width:66px; text-decoration:none; color:var(--wintext); font-family:'VT323',monospace; font-size:13px; text-align:center;">
+        <span class="folder-icon" style="width:32px; height:24px; background:#e0a83a; position:relative;"><span style="position:absolute; top:0; left:0; width:13px; height:6px; background:#e0a83a; transform:translateY(-100%);"></span></span>
+        Portfolio
+      </a>
+      <a href="#c-about" style="display:flex; flex-direction:column; align-items:center; gap:6px; width:66px; text-decoration:none; color:var(--wintext); font-family:'VT323',monospace; font-size:13px; text-align:center;">
+        <span style="width:32px; height:24px; background:#2f9e5c; position:relative;"><span style="position:absolute; top:0; left:0; width:13px; height:6px; background:#2f9e5c; transform:translateY(-100%);"></span></span>
+        About
+      </a>
+      <a href="#c-proj" style="display:flex; flex-direction:column; align-items:center; gap:6px; width:66px; text-decoration:none; color:var(--wintext); font-family:'VT323',monospace; font-size:13px; text-align:center;">
+        <span style="width:32px; height:24px; background:#1f7a4d; position:relative;"><span style="position:absolute; top:0; left:0; width:13px; height:6px; background:#1f7a4d; transform:translateY(-100%);"></span></span>
+        Projects
+      </a>
+      <a href="#c-ts" style="display:flex; flex-direction:column; align-items:center; gap:6px; width:66px; text-decoration:none; color:var(--wintext); font-family:'VT323',monospace; font-size:13px; text-align:center;">
+        <span style="width:24px; height:28px; background:#dfe9e2; box-shadow:0 0 0 1px #14251c; clip-path:polygon(0 0,65% 0,100% 25%,100% 100%,0 100%);"></span>
+        TSAuditor
+      </a>
+      <a href="#c-skills" style="display:flex; flex-direction:column; align-items:center; gap:6px; width:66px; text-decoration:none; color:var(--wintext); font-family:'VT323',monospace; font-size:13px; text-align:center;">
+        <span style="width:28px; height:28px; border-radius:50%; background:#dfe9e2; box-shadow:0 0 0 1px #14251c;"></span>
+        Skills
+      </a>
+      <a href="https://github.com/imann128" target="_blank" rel="noopener" style="display:flex; flex-direction:column; align-items:center; gap:6px; width:66px; text-decoration:none; color:var(--wintext); font-family:'VT323',monospace; font-size:13px; text-align:center;">
+        <span style="width:28px; height:28px; background:var(--accent); box-shadow:0 0 0 1px #14251c;"></span>
+        GitHub
+      </a>
+      <a href="https://dev.to/imann_12" target="_blank" rel="noopener" style="display:flex; flex-direction:column; align-items:center; gap:6px; width:66px; text-decoration:none; color:var(--wintext); font-family:'VT323',monospace; font-size:13px; text-align:center;">
+        <span style="width:32px; height:24px; background:#3a7057; position:relative;"><span style="position:absolute; top:0; left:0; width:13px; height:6px; background:#3a7057; transform:translateY(-100%);"></span></span>
+        dev.to
+      </a>
+    </div>
 
-  <main style="max-width:1040px; margin:0 auto; padding:2.5rem 1.75rem 4rem;">
+    <!-- Desktop scene: plain flex/grid layout so it fits cleanly at any
+         viewport size instead of the original fixed-canvas absolute
+         positioning (which left huge dead space below ~900px tall canvases). -->
+    <div class="desktop-scene" style="padding:18px;">
+      <div style="display:flex; gap:16px; align-items:flex-start; flex-wrap:wrap;">
 
-    <section style="text-align:center; padding:3rem 1.5rem 2.5rem;">
-      <p style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#1F7A4D; letter-spacing:0.12em; text-transform:uppercase; margin:0 0 0.9rem;">NUST SEECS, Islamabad</p>
-      <h1 style="font-family:'Noto Serif',Georgia,serif; font-size:clamp(2.6rem,6vw,4rem); line-height:1.02; font-weight:500; letter-spacing:-0.01em; margin:0 0 1.25rem;">Iman Naeem</h1>
-      <p style="font-size:1.1rem; color:#3A4F44; max-width:680px; margin:0 auto 1.5rem;">
-        I work primarily in data analytics and engineering, building dashboards, extracting insights, and designing
-        pipelines to understand what's really happening at the data level. A lot of my work takes a Pakistan-centric
-        angle, like my <em style="color:#1F7A4D; font-style:italic;">OGDC equity-analysis platform</em> built on 6+ years
-        of PSX stock data. I build end-to-end data systems spanning ETL, statistical inference, and machine learning,
-        and full-stack apps across Python, .NET, and React backed by SQLite, Redis, and PostgreSQL. Most of my focus
-        right now is <em style="color:#1F7A4D; font-style:italic;">open source</em>: I authored <em style="color:#1F7A4D; font-style:italic;">TSAuditor</em>,
-        a time-series data-quality library now on PyPI, and landed a merged contribution to <em style="color:#1F7A4D; font-style:italic;">statsmodels</em>,
-        both rooted in one thing I care about: making sure data is trustworthy before anyone models it.
-      </p>
-      <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:0.6rem;">
-        <a href="https://github.com/imann128" target="_blank" rel="noopener" class="hov6">github.com/imann128</a>
-        <a href="https://dev.to/imann_12" target="_blank" rel="noopener" class="hov7">dev.to/imann_12</a>
+        <!-- Projects folder window -->
+          <div style="flex:1 1 380px; max-width:430px; background:var(--win); box-shadow:0 0 0 1px #14251c, 3px 3px 0 rgba(0,0,0,0.25);">
+            <div style="background:var(--bar); color:var(--bartext); display:flex; align-items:center; gap:8px; padding:5px 10px;">
+              <span style="width:11px; height:11px; background:var(--accent2); flex-shrink:0;"></span>
+              <span style="font-family:'VT323',monospace; font-size:16px; flex:1; min-width:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">~/projects</span>
+            </div>
+            <div style="padding:14px; font-family:'VT323',monospace; font-size:13px; color:var(--muted); border-bottom:1px solid #d5e3d9;">7 items · production</div>
+            <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:14px; padding:16px;">
+              <a href="#portfolio-content" class="portfolio-launcher" style="display:flex; flex-direction:column; align-items:center; gap:6px; text-decoration:none; color:var(--wintext); font-family:'VT323',monospace; font-size:13px; text-align:center;">
+                <span class="folder-icon" style="width:34px; height:26px; background:#e0a83a; position:relative;"><span style="position:absolute; top:0; left:0; width:14px; height:6px; background:#e0a83a; transform:translateY(-100%);"></span></span>
+                Portfolio
+              </a>
+              <a href="#c-proj" style="display:flex; flex-direction:column; align-items:center; gap:6px; text-decoration:none; color:var(--wintext); font-family:'VT323',monospace; font-size:13px; text-align:center;">
+                <span style="width:34px; height:26px; background:#2f9e5c; position:relative;"><span style="position:absolute; top:0; left:0; width:14px; height:6px; background:#2f9e5c; transform:translateY(-100%);"></span></span>
+                OGDC
+              </a>
+              <a href="#c-proj" style="display:flex; flex-direction:column; align-items:center; gap:6px; text-decoration:none; color:var(--wintext); font-family:'VT323',monospace; font-size:13px; text-align:center;">
+                <span style="width:34px; height:26px; background:#1f7a4d; position:relative;"><span style="position:absolute; top:0; left:0; width:14px; height:6px; background:#1f7a4d; transform:translateY(-100%);"></span></span>
+                IoT-Anomaly
+              </a>
+              <a href="#c-proj" style="display:flex; flex-direction:column; align-items:center; gap:6px; text-decoration:none; color:var(--wintext); font-family:'VT323',monospace; font-size:13px; text-align:center;">
+                <span style="width:34px; height:26px; background:#4a8f6c; position:relative;"><span style="position:absolute; top:0; left:0; width:14px; height:6px; background:#4a8f6c; transform:translateY(-100%);"></span></span>
+                DevMetrics
+              </a>
+              <a href="#c-proj" style="display:flex; flex-direction:column; align-items:center; gap:6px; text-decoration:none; color:var(--wintext); font-family:'VT323',monospace; font-size:13px; text-align:center;">
+                <span style="width:34px; height:26px; background:#3a7057; position:relative;"><span style="position:absolute; top:0; left:0; width:14px; height:6px; background:#3a7057; transform:translateY(-100%);"></span></span>
+                RelayCore
+              </a>
+              <a href="#c-proj" style="display:flex; flex-direction:column; align-items:center; gap:6px; text-decoration:none; color:var(--wintext); font-family:'VT323',monospace; font-size:13px; text-align:center;">
+                <span style="width:34px; height:26px; background:#276b45; position:relative;"><span style="position:absolute; top:0; left:0; width:14px; height:6px; background:#276b45; transform:translateY(-100%);"></span></span>
+                ABTest
+              </a>
+              <a href="#c-ts" style="display:flex; flex-direction:column; align-items:center; gap:6px; text-decoration:none; color:var(--wintext); font-family:'VT323',monospace; font-size:13px; text-align:center;">
+                <span style="width:26px; height:32px; background:#dfe9e2; box-shadow:0 0 0 1px #14251c; clip-path:polygon(0 0,65% 0,100% 25%,100% 100%,0 100%);"></span>
+                TSAuditor
+              </a>
+            </div>
+          </div>
+
+        <!-- right side: icon rail up front, Skills panel filling the space
+             below/right of the icons instead of stacking under Projects -->
+        <div style="flex:1 1 320px; display:flex; gap:16px; align-items:flex-start;">
+
+          <!-- icon rail: bookmarks up top, trash pinned to the bottom of the column -->
+          <div style="width:80px; flex-shrink:0; min-height:100%; display:flex; flex-direction:column; align-items:center; gap:16px;">
+            <a href="#c-about" style="display:flex; flex-direction:column; align-items:center; gap:5px; text-decoration:none; color:var(--wintext); font-family:'VT323',monospace; font-size:14px; text-align:center; width:64px;">
+              <span style="width:34px; height:30px; background:#dfe9e2; box-shadow:0 0 0 1px #14251c, inset 0 0 0 3px #fff;"></span>
+              Resume
+            </a>
+            <a href="https://github.com/imann128" target="_blank" rel="noopener" style="display:flex; flex-direction:column; align-items:center; gap:5px; text-decoration:none; color:var(--wintext); font-family:'VT323',monospace; font-size:14px; text-align:center; width:64px;">
+              <span style="width:32px; height:32px; background:var(--accent); box-shadow:0 0 0 1px #14251c;"></span>
+              GitHub
+            </a>
+            <div style="flex:1;"></div>
+            <div style="display:flex; flex-direction:column; align-items:center; gap:5px; font-family:'VT323',monospace; font-size:13px; color:var(--wintext);">
+              <span style="width:28px; height:26px; background:#dfe9e2; box-shadow:0 0 0 1px #14251c;"></span>
+              Archive
+            </div>
+          </div>
+
+          <!-- Skills GUI panel: sits below/right of Resume+GitHub, filling
+               what used to be dead space -->
+          <div style="flex:1 1 240px; max-width:270px; margin-top:118px; background:var(--win); box-shadow:0 0 0 1px #14251c, 3px 3px 0 rgba(0,0,0,0.25);">
+            <div style="background:var(--bar); color:var(--bartext); display:flex; align-items:center; gap:8px; padding:5px 10px;">
+              <span style="width:11px; height:11px; background:var(--accent2); flex-shrink:0;"></span>
+              <span style="font-family:'VT323',monospace; font-size:16px; flex:1; min-width:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">SKILLS</span>
+            </div>
+            <div style="padding:14px; font-family:'VT323',monospace; font-size:15px;">
+              <div style="margin-bottom:8px;">Python</div>
+              <div style="height:9px; background:#dfe9e2; box-shadow:0 0 0 1px #14251c; margin-bottom:12px;"><div style="width:82%; height:100%; background:var(--accent);"></div></div>
+              <div style="margin-bottom:8px;">Cloud / Edge infra</div>
+              <div style="height:9px; background:#dfe9e2; box-shadow:0 0 0 1px #14251c; margin-bottom:14px;"><div style="width:74%; height:100%; background:var(--accent);"></div></div>
+              <div style="display:flex; gap:16px; margin-bottom:12px;">
+                <label style="display:flex; align-items:center; gap:5px;"><span style="width:11px; height:11px; border-radius:50%; box-shadow:0 0 0 1px #14251c; background:var(--accent);"></span>Systems</label>
+                <label style="display:flex; align-items:center; gap:5px;"><span style="width:11px; height:11px; border-radius:50%; box-shadow:0 0 0 1px #14251c;"></span>Cloud</label>
+              </div>
+              <div style="display:flex; gap:5px; margin-bottom:12px;">
+                <span style="width:16px; height:16px; background:#123524; box-shadow:0 0 0 1px #14251c;"></span>
+                <span style="width:16px; height:16px; background:#1f7a4d; box-shadow:0 0 0 1px #14251c;"></span>
+                <span style="width:16px; height:16px; background:#2f9e5c; box-shadow:0 0 0 1px #14251c;"></span>
+                <span style="width:16px; height:16px; background:#7bbfa0; box-shadow:0 0 0 1px #14251c;"></span>
+              </div>
+              <div style="display:flex; gap:8px;">
+                <span style="flex:1; text-align:center; font-size:13px; padding:4px 0; background:var(--accent); color:#fff;">Apply</span>
+                <span style="flex:1; text-align:center; font-size:13px; padding:4px 0; background:#dfe9e2; box-shadow:0 0 0 1px #14251c;">Cancel</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
       </div>
-    </section>
 
-    <section id="tsauditor" style="margin-bottom:3rem;">
-      <div style="display:flex; align-items:center; gap:0.85rem; margin-bottom:1.5rem;">
-        <span style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:500; color:#1F7A4D; letter-spacing:0.12em; text-transform:uppercase; white-space:nowrap;">Featured Open-Source Library</span>
-        <div style="flex:1; height:1px; background:#DCE5DA;"></div>
+      <!-- bottom dock -->
+      <div style="display:flex; gap:26px; margin-top:16px; padding-top:10px; border-top:1px dashed rgba(20,37,28,0.3); justify-content:flex-start;">
+        <a href="https://github.com/imann128" target="_blank" rel="noopener" style="display:flex; flex-direction:column; align-items:center; gap:5px; text-decoration:none; color:var(--wintext); font-family:'VT323',monospace; font-size:13px;">
+          <span style="width:30px; height:30px; background:#14251c; border-radius:6px;"></span>GitHub
+        </a>
+        <a href="https://pypi.org/project/tsauditor/" target="_blank" rel="noopener" style="display:flex; flex-direction:column; align-items:center; gap:5px; text-decoration:none; color:var(--wintext); font-family:'VT323',monospace; font-size:13px;">
+          <span style="width:30px; height:30px; background:#1f5c34; border-radius:6px;"></span>PyPI
+        </a>
+        <a href="https://dev.to/imann_12" target="_blank" rel="noopener" style="display:flex; flex-direction:column; align-items:center; gap:5px; text-decoration:none; color:var(--wintext); font-family:'VT323',monospace; font-size:13px;">
+          <span style="width:30px; height:30px; background:#2f9e5c; border-radius:6px;"></span>dev.to
+        </a>
+        <span style="display:flex; flex-direction:column; align-items:center; gap:5px; color:var(--wintext); font-family:'VT323',monospace; font-size:13px;">
+          <span style="width:30px; height:30px; background:#123524; border-radius:6px;"></span>Console
+        </span>
+      </div>
+    </div>
+
+    <div id="portfolio-content" style="padding:6px 30px 30px; border-top:3px solid #14251c; background:#eef5ee;">
+
+      <div id="c-about" style="background:var(--win); box-shadow:0 0 0 1px #14251c; margin:20px 0;">
+        <div style="background:var(--bar); color:var(--bartext); display:flex; align-items:center; gap:8px; padding:5px 10px;">
+          <span style="width:11px; height:11px; background:var(--accent2); flex-shrink:0;"></span>
+          <span style="font-family:'VT323',monospace; font-size:16px; flex:1; min-width:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">about.txt</span>
+        </div>
+        <div style="padding:18px;">
+          <div style="display:flex; gap:18px; align-items:flex-start; flex-wrap:wrap;">
+            <div style="width:110px; height:110px; background:repeating-linear-gradient(45deg, #dfe9e2, #dfe9e2 8px, #cfe0d3 8px, #cfe0d3 16px); box-shadow:0 0 0 1px #14251c; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-family:'VT323',monospace; font-size:12px; color:var(--muted); text-align:center;">PHOTO<br>PLACEHOLDER</div>
+            <div style="flex:1; min-width:280px;">
+              <div style="font-family:'Press Start 2P',monospace; font-size:19px; color:var(--accent); margin-bottom:10px;">IMAN NAEEM</div>
+              <div style="font-family:'VT323',monospace; font-size:15px; color:var(--muted); margin-bottom:10px;">NUST SEECS · ISLAMABAD · Full-stack &amp; systems, cloud &amp; edge</div>
+              <p style="font-size:14.5px; line-height:1.6; margin:0;">
+                Full-stack and systems engineer working across cloud and edge: data pipelines, ML infrastructure, and
+                production APIs built to hold up under real load. My focus is correctness at the boundary: pipelines that
+                can't leak the future into the past, webhooks that can't double-fire, backtests that don't lie. That
+                discipline runs through everything I ship, from a live PSX equity-analysis platform tracking 6+ years of
+                market data to TSAuditor, a time-series data-quality auditor now on PyPI, and a merged fix to statsmodels'
+                ARIMA estimator.
+              </p>
+              <div style="display:flex; gap:8px; margin-top:12px; flex-wrap:wrap;">
+                <a href="https://github.com/imann128" target="_blank" rel="noopener" style="font-family:'VT323',monospace; font-size:15px; padding:5px 12px; background:#dfe9e2; box-shadow:0 0 0 1px #14251c; color:var(--wintext); text-decoration:none;">github.com/imann128</a>
+                <a href="https://dev.to/imann_12" target="_blank" rel="noopener" style="font-family:'VT323',monospace; font-size:15px; padding:5px 12px; background:#dfe9e2; box-shadow:0 0 0 1px #14251c; color:var(--wintext); text-decoration:none;">dev.to/imann_12</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div style="background:#FFFFFF; border:1px solid #DCE5DA; border-radius:18px; overflow:hidden; box-shadow:0 1px 2px rgba(20,83,45,.04), 0 4px 16px rgba(20,83,45,.05); display:grid; grid-template-columns:1.05fr 0.95fr;">
-
-        <div style="padding:2.1rem 2.2rem;">
-          <span style="display:inline-flex; align-items:center; gap:6px; font-family:'JetBrains Mono',monospace; font-size:10.5px; font-weight:500; letter-spacing:0.06em; text-transform:uppercase; color:#1F7A4D; background:#EAF5EE; border:1px solid #CFE8D8; border-radius:999px; padding:4px 11px; margin-bottom:1.1rem;">
-            <span style="width:7px; height:7px; border-radius:50%; background:#1F7A4D; display:inline-block;"></span> Live on PyPI, community-backed
-          </span>
-          <h2 style="font-family:'Noto Serif',serif; font-weight:600; font-size:1.85rem; line-height:1.1; margin:0 0 0.4rem; letter-spacing:-0.01em; color:#142420;">TSAuditor
-            <span style="font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:400; color:#6C8177; display:block; margin-top:5px; letter-spacing:0;">a time-series integrity &amp; data-quality auditing framework</span>
-          </h2>
-          <p style="color:#3A4F44; font-size:14.5px; margin:0 0 0.9rem; font-weight:600;">tsauditor 0.2.0, the data guard release</p>
-          <p style="color:#3A4F44; font-size:14.5px; margin:0 0 1.1rem;">
-            A major, fully backward-compatible feature release. TSAuditor moves from a leakage detector toward a
-            complete data guard: it now catches point-in-time and validity flaws, repairs them on a copy, scores
-            data health, exports formal reports, and hands clean arrays straight to forecasting models.
+      <div id="c-ts" style="background:var(--win); box-shadow:0 0 0 1px #14251c; margin:20px 0;">
+        <div style="background:var(--bar); color:var(--bartext); display:flex; align-items:center; gap:8px; padding:5px 10px;">
+          <span style="width:11px; height:11px; background:var(--accent2); flex-shrink:0;"></span>
+          <span style="font-family:'VT323',monospace; font-size:16px; flex:1; min-width:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">TSAuditor.exe · Featured Release</span>
+        </div>
+        <div style="padding:18px;">
+          <div style="display:inline-block; font-family:'VT323',monospace; font-size:14px; background:#123524; color:#9fe8b8; padding:3px 10px; margin-bottom:10px;">● tsauditor 0.2.0 · the data guard release · live on PyPI</div>
+          <p style="font-size:14.5px; line-height:1.6; margin:0 0 12px;">
+            A major, fully backward-compatible feature release. TSAuditor moves from a leakage detector to a complete
+            data guard: it catches point-in-time and validity flaws, repairs them on a copy, scores data health, and exports
+            audit-ready reports, so nothing gets modeled until it's been checked.
           </p>
-          <div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom:1.2rem;">
-            <span style="font-size:11.5px; font-weight:500; padding:4px 10px; border-radius:999px; background:#EAF5EE; color:#1F7A4D; border:1px solid #CFE8D8;">Leakage detection (AUC-based)</span>
-            <span style="font-size:11.5px; font-weight:500; padding:4px 10px; border-radius:999px; background:#EAF5EE; color:#1F7A4D; border:1px solid #CFE8D8;">Point-in-time &amp; validity checks</span>
-            <span style="font-size:11.5px; font-weight:500; padding:4px 10px; border-radius:999px; background:#EAF5EE; color:#1F7A4D; border:1px solid #CFE8D8;">Auto-repair on a copy</span>
-            <span style="font-size:11.5px; font-weight:500; padding:4px 10px; border-radius:999px; background:#EAF5EE; color:#1F7A4D; border:1px solid #CFE8D8;">Data-health scoring</span>
-            <span style="font-size:11.5px; font-weight:500; padding:4px 10px; border-radius:999px; background:#EAF5EE; color:#1F7A4D; border:1px solid #CFE8D8;">Rich + JSON reports</span>
-          </div>
-          <p style="font-style:italic; font-size:13px; color:#6C8177; margin-bottom:1.3rem;">Featured in Data Science Weekly, Substack Issue 657, plus mentions across numerous tech blogs.</p>
-          <div style="display:flex; flex-wrap:wrap; gap:0.6rem;">
-            <a href="https://github.com/imann128/tsauditor" target="_blank" rel="noopener" class="hov8">↗ GitHub</a>
-            <a href="https://pypi.org/project/tsauditor/" target="_blank" rel="noopener" class="hov9">↗ PyPI</a>
-            <a href="https://www.reddit.com/r/MachineLearning/comments/1ub15wf/tsauditor_a_timeseries_auditing_framework_p/" target="_blank" rel="noopener" class="hov10">↗ r/MachineLearning</a>
+          <p style="font-style:italic; font-size:13px; color:var(--muted); margin-bottom:12px;">Featured in Data Science Weekly, Substack Issue 657, plus mentions across numerous tech blogs.</p>
+          <div style="background:#123524; color:#9fe8b8; font-family:'VT323',monospace; font-size:16px; padding:10px 14px; box-shadow:0 0 0 1px #14251c; margin-bottom:12px;">$ pip install tsauditor</div>
+          <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            <a href="https://github.com/imann128/tsauditor" target="_blank" rel="noopener" style="font-family:'VT323',monospace; font-size:15px; padding:5px 12px; background:#dfe9e2; box-shadow:0 0 0 1px #14251c; color:var(--wintext); text-decoration:none;">↗ GitHub</a>
+            <a href="https://pypi.org/project/tsauditor/" target="_blank" rel="noopener" style="font-family:'VT323',monospace; font-size:15px; padding:5px 12px; background:#dfe9e2; box-shadow:0 0 0 1px #14251c; color:var(--wintext); text-decoration:none;">↗ PyPI</a>
           </div>
         </div>
+      </div>
 
-        <div style="display:flex; flex-direction:column; background:#EAF5EE; height:100%;">
-          <div style="background:#123524; color:#fff; padding:1.5rem 1.6rem;">
-            <div style="font-family:'JetBrains Mono',monospace; font-size:1.4rem; font-weight:500; margin-bottom:0.95rem;">tsauditor 0.2.0</div>
-            <span style="display:inline-flex; align-items:center; gap:9px; font-family:'JetBrains Mono',monospace; font-size:12.5px; background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.28); border-radius:8px; padding:8px 13px;">pip install tsauditor</span>
-            <div style="display:flex; align-items:center; gap:9px; font-family:'JetBrains Mono',monospace; font-size:11px; margin-top:1rem; color:#CFE8D8;">
-              <b style="display:inline-flex; align-items:center; gap:6px; background:#2c9b3f; color:#fff; border:none; padding:4px 10px; border-radius:6px; font-weight:500;">Latest release</b> Released Jul 5, 2026
+      <div id="c-proj" style="background:var(--win); box-shadow:0 0 0 1px #14251c; margin:20px 0;">
+        <div style="background:var(--bar); color:var(--bartext); display:flex; align-items:center; gap:8px; padding:5px 10px;">
+          <span style="width:11px; height:11px; background:var(--accent2); flex-shrink:0;"></span>
+          <span style="font-family:'VT323',monospace; font-size:16px; flex:1; min-width:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">~/projects · details</span>
+        </div>
+        <div style="padding:14px 18px;">
+          <div class="proj-desktop">
+            <div style="display:grid; grid-template-columns:1.4fr 2.6fr 1.2fr; font-family:'VT323',monospace; font-size:14px; color:var(--muted); border-bottom:1px solid #d5e3d9; padding:0 4px 6px; margin-bottom:6px;">
+              <span>NAME</span><span>DESCRIPTION</span><span>STACK</span>
+            </div>
+            <div style="display:grid; grid-template-columns:1.4fr 2.6fr 1.2fr; gap:10px; padding:9px 4px; border-bottom:1px dotted #d5e3d9; align-items:start;">
+              <span style="font-weight:bold; font-size:13.5px;">OGDC Equity Analysis Platform</span>
+              <span style="font-size:13px; line-height:1.5;">Production analytics platform over 6+ years of PSX equity data: GARCH volatility modelling, Bollinger-Band backtesting, and sentiment analysis across 14 sources, served through a deployed React dashboard with strict train/test discipline to keep the backtests honest.</span>
+              <span style="font-size:12px; font-family:'VT323',monospace; line-height:1.6;">Python · React · GARCH</span>
+            </div>
+            <div style="display:grid; grid-template-columns:1.4fr 2.6fr 1.2fr; gap:10px; padding:9px 4px; border-bottom:1px dotted #d5e3d9; align-items:start;">
+              <span style="font-weight:bold; font-size:13.5px;">IoT Sensor Anomaly Detection</span>
+              <span style="font-size:13px; line-height:1.5;">Anomaly detection service for NASA SMAP/MSL telemetry, running Isolation Forest and a rolling z-score baseline side by side, benchmarked against labelled ground truth and shipped as a reproducible container.</span>
+              <span style="font-size:12px; font-family:'VT323',monospace; line-height:1.6;">Python · Docker</span>
+            </div>
+            <div style="display:grid; grid-template-columns:1.4fr 2.6fr 1.2fr; gap:10px; padding:9px 4px; border-bottom:1px dotted #d5e3d9; align-items:start;">
+              <span style="font-weight:bold; font-size:13.5px;">DevMetrics</span>
+              <span style="font-size:13px; line-height:1.5;">Self-hosted Git telemetry service: streams commit activity over SignalR in real time and exposes a Prometheus-compatible /metrics endpoint for dashboards and alerting in production.</span>
+              <span style="font-size:12px; font-family:'VT323',monospace; line-height:1.6;">.NET 8 · SignalR</span>
+            </div>
+            <div style="display:grid; grid-template-columns:1.4fr 2.6fr 1.2fr; gap:10px; padding:9px 4px; border-bottom:1px dotted #d5e3d9; align-items:start;">
+              <span style="font-weight:bold; font-size:13.5px;">RelayCore</span>
+              <span style="font-size:13px; line-height:1.5;">Production webhook relay guaranteeing at-least-once delivery: Redis-backed idempotent dedup, JSONPath fan-out routing, HMAC-SHA256 verification, an SSRF guard, and a dead-letter queue for failed deliveries.</span>
+              <span style="font-size:12px; font-family:'VT323',monospace; line-height:1.6;">Django · Redis</span>
+            </div>
+            <div style="display:grid; grid-template-columns:1.4fr 2.6fr 1.2fr; gap:10px; padding:9px 4px; border-bottom:1px dotted #d5e3d9; align-items:start;">
+              <span style="font-weight:bold; font-size:13.5px;">Image-Gen Prompts A/B Test</span>
+              <span style="font-size:13px; line-height:1.5;">Product-intelligence dashboard over 50K real generation events, answering the questions that actually move a roadmap: which model ships, where latency costs retention, and what drives prompt quality.</span>
+              <span style="font-size:12px; font-family:'VT323',monospace; line-height:1.6;">Streamlit · scipy</span>
             </div>
           </div>
-          <div style="padding:1.4rem 1.6rem; flex:1;">
-            <div style="font-size:12.5px; color:#3A4F44; line-height:1.6; margin-bottom:1.1rem;">A data guard for time-series tabular data in financial and sensor domains. Version 0.2.0 catches point-in-time and validity flaws, repairs them on a copy, scores data health, and exports formal reports. Fully backward-compatible. CI green across Python 3.9 to 3.14 on Linux, Windows &amp; macOS.</div>
-            <div style="display:flex; flex-wrap:wrap; gap:0.45rem;">
-              <span style="display:inline-flex; font-family:'JetBrains Mono',monospace; font-size:10.5px; border-radius:5px; overflow:hidden;"><span style="padding:3px 9px; background:#3a3a3a; color:#fff;">CI</span><span style="padding:3px 9px; background:#3f9c35; color:#fff;">passing</span></span>
-              <span style="display:inline-flex; font-family:'JetBrains Mono',monospace; font-size:10.5px; border-radius:5px; overflow:hidden;"><span style="padding:3px 9px; background:#3a3a3a; color:#fff;">codecov</span><span style="padding:3px 9px; background:#5b9c35; color:#fff;">90%</span></span>
-              <span style="display:inline-flex; font-family:'JetBrains Mono',monospace; font-size:10.5px; border-radius:5px; overflow:hidden;"><span style="padding:3px 9px; background:#3a3a3a; color:#fff;">license</span><span style="padding:3px 9px; background:#b5852a; color:#fff;">MIT</span></span>
+          <div class="proj-mobile">
+            <div style="padding:12px 4px; border-bottom:1px dotted #d5e3d9;">
+              <div style="font-weight:bold; font-size:14px; margin-bottom:5px;">OGDC Equity Analysis Platform</div>
+              <div style="font-size:13px; line-height:1.5; margin-bottom:6px;">Production analytics platform over 6+ years of PSX equity data: GARCH volatility modelling, Bollinger-Band backtesting, and sentiment analysis across 14 sources, served through a deployed React dashboard with strict train/test discipline to keep the backtests honest.</div>
+              <div style="font-size:12px; font-family:'VT323',monospace; color:var(--muted);">Python · React · GARCH</div>
+            </div>
+            <div style="padding:12px 4px; border-bottom:1px dotted #d5e3d9;">
+              <div style="font-weight:bold; font-size:14px; margin-bottom:5px;">IoT Sensor Anomaly Detection</div>
+              <div style="font-size:13px; line-height:1.5; margin-bottom:6px;">Anomaly detection service for NASA SMAP/MSL telemetry, running Isolation Forest and a rolling z-score baseline side by side, benchmarked against labelled ground truth and shipped as a reproducible container.</div>
+              <div style="font-size:12px; font-family:'VT323',monospace; color:var(--muted);">Python · Docker</div>
+            </div>
+            <div style="padding:12px 4px; border-bottom:1px dotted #d5e3d9;">
+              <div style="font-weight:bold; font-size:14px; margin-bottom:5px;">DevMetrics</div>
+              <div style="font-size:13px; line-height:1.5; margin-bottom:6px;">Self-hosted Git telemetry service: streams commit activity over SignalR in real time and exposes a Prometheus-compatible /metrics endpoint for dashboards and alerting in production.</div>
+              <div style="font-size:12px; font-family:'VT323',monospace; color:var(--muted);">.NET 8 · SignalR</div>
+            </div>
+            <div style="padding:12px 4px; border-bottom:1px dotted #d5e3d9;">
+              <div style="font-weight:bold; font-size:14px; margin-bottom:5px;">RelayCore</div>
+              <div style="font-size:13px; line-height:1.5; margin-bottom:6px;">Production webhook relay guaranteeing at-least-once delivery: Redis-backed idempotent dedup, JSONPath fan-out routing, HMAC-SHA256 verification, an SSRF guard, and a dead-letter queue for failed deliveries.</div>
+              <div style="font-size:12px; font-family:'VT323',monospace; color:var(--muted);">Django · Redis</div>
+            </div>
+            <div style="padding:12px 4px; border-bottom:1px dotted #d5e3d9;">
+              <div style="font-weight:bold; font-size:14px; margin-bottom:5px;">Image-Gen Prompts A/B Test</div>
+              <div style="font-size:13px; line-height:1.5; margin-bottom:6px;">Product-intelligence dashboard over 50K real generation events, answering the questions that actually move a roadmap: which model ships, where latency costs retention, and what drives prompt quality.</div>
+              <div style="font-size:12px; font-family:'VT323',monospace; color:var(--muted);">Streamlit · scipy</div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-    <section id="projects" style="margin-bottom:3rem;">
-      <div style="display:flex; align-items:center; gap:0.85rem; margin-bottom:1.5rem;">
-        <span style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:500; color:#1F7A4D; letter-spacing:0.12em; text-transform:uppercase; white-space:nowrap;">Selected Projects</span>
-        <div style="flex:1; height:1px; background:#DCE5DA;"></div>
-      </div>
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.25rem;">
 
-        <div style="border:1px solid #CFE8D8; background:#EAF5EE; border-radius:14px; overflow:hidden; box-shadow:0 1px 2px rgba(20,83,45,.04), 0 4px 16px rgba(20,83,45,.05); display:flex; flex-direction:column;">
-          <div style="background:#1E1E1E; display:flex; flex-direction:column;">
-            <div style="padding:8px 12px 6px; display:flex; align-items:center; gap:5px;"><div style="width:9px; height:9px; border-radius:50%; background:#FF5F57;"></div><div style="width:9px; height:9px; border-radius:50%; background:#FFBD2E;"></div><div style="width:9px; height:9px; border-radius:50%; background:#28CA42;"></div></div>
-            <img src="assets/cfd13ad5-8ead-4de1-8162-35a1db32d95a.png" alt="OGDC equity analysis dashboard" style="width:100%; display:block; height:188px; object-fit:cover; object-position:top;">
-          </div>
-          <div style="padding:1.1rem 1.25rem 1.25rem; flex:1; display:flex; flex-direction:column;">
-            <div style="font-size:14.5px; font-weight:600; color:#142420; margin-bottom:0.4rem;">OGDC Equity Analysis Platform</div>
-            <div style="font-size:13px; color:#3A4F44; line-height:1.55; margin-bottom:0.9rem; flex:1;">End-to-end pipeline over 6+ years of PSX data: GARCH volatility modelling, Bollinger-Band backtesting, and sentiment analysis across 14 sources, surfaced through a deployed React dashboard. Built with strict train/test discipline to avoid look-ahead leakage.</div>
-            <div style="display:flex; flex-wrap:wrap; gap:0.35rem; margin-bottom:0.9rem;">
-              <span style="font-family:'JetBrains Mono',monospace; font-size:10.5px; font-weight:500; padding:2px 8px; border-radius:5px; background:#FFFFFF; border:1px solid #CFE8D8; color:#1F7A4D;">Python</span>
-              <span style="font-family:'JetBrains Mono',monospace; font-size:10.5px; font-weight:500; padding:2px 8px; border-radius:5px; background:#FFFFFF; border:1px solid #CFE8D8; color:#1F7A4D;">React.js</span>
-              <span style="font-family:'JetBrains Mono',monospace; font-size:10.5px; font-weight:500; padding:2px 8px; border-radius:5px; background:#FFFFFF; border:1px solid #CFE8D8; color:#1F7A4D;">GARCH</span>
-              <span style="font-family:'JetBrains Mono',monospace; font-size:10.5px; font-weight:500; padding:2px 8px; border-radius:5px; background:#FFFFFF; border:1px solid #CFE8D8; color:#1F7A4D;">Recharts</span>
-              <span style="font-family:'JetBrains Mono',monospace; font-size:10.5px; font-weight:500; padding:2px 8px; border-radius:5px; background:#FFFFFF; border:1px solid #CFE8D8; color:#1F7A4D;">Vercel</span>
-            </div>
-            <div style="display:flex; gap:0.85rem;">
-              <a href="https://github.com/imann128/ogdc-project" target="_blank" rel="noopener" class="hov11">↗ GitHub</a>
-              <a href="https://ogdc-project.vercel.app/" target="_blank" rel="noopener" class="hov12">↗ Live</a>
-            </div>
-          </div>
+      <div id="c-oss" style="background:var(--win); box-shadow:0 0 0 1px #14251c; margin:20px 0;">
+        <div style="background:var(--bar); color:var(--bartext); display:flex; align-items:center; gap:8px; padding:5px 10px;">
+          <span style="width:11px; height:11px; background:var(--accent2); flex-shrink:0;"></span>
+          <span style="font-family:'VT323',monospace; font-size:16px; flex:1; min-width:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">open_source.log</span>
         </div>
-
-        <div style="border:1px solid #DCE5DA; background:#FFFFFF; border-radius:14px; overflow:hidden; box-shadow:0 1px 2px rgba(20,83,45,.04), 0 4px 16px rgba(20,83,45,.05); display:flex; flex-direction:column;">
-          <div style="background:#1E1E1E; display:flex; flex-direction:column;">
-            <div style="padding:8px 12px 6px; display:flex; align-items:center; gap:5px;"><div style="width:9px; height:9px; border-radius:50%; background:#FF5F57;"></div><div style="width:9px; height:9px; border-radius:50%; background:#FFBD2E;"></div><div style="width:9px; height:9px; border-radius:50%; background:#28CA42;"></div></div>
-            <img src="assets/59575470-b873-4833-a7c3-7ebfd1c27980.png" alt="IoT anomaly detection dashboard" style="width:100%; display:block; height:188px; object-fit:cover; object-position:top;">
-          </div>
-          <div style="padding:1.1rem 1.25rem 1.25rem; flex:1; display:flex; flex-direction:column;">
-            <div style="font-size:14.5px; font-weight:600; color:#142420; margin-bottom:0.4rem;">IoT Sensor Anomaly Detection Pipeline</div>
-            <div style="font-size:13px; color:#3A4F44; line-height:1.55; margin-bottom:0.9rem; flex:1;">Dual-method anomaly detection on NASA SMAP/MSL telemetry: Isolation Forest and a z-score rolling window, benchmarked against labelled ground truth with precision/recall reported per channel. Containerised for reproducible runs.</div>
-            <div style="display:flex; flex-wrap:wrap; gap:0.35rem; margin-bottom:0.9rem;">
-              <span style="font-family:'JetBrains Mono',monospace; font-size:10.5px; font-weight:500; padding:2px 8px; border-radius:5px; background:#EAF5EE; border:1px solid #CFE8D8; color:#1F7A4D;">Python</span>
-              <span style="font-family:'JetBrains Mono',monospace; font-size:10.5px; font-weight:500; padding:2px 8px; border-radius:5px; background:#EAF5EE; border:1px solid #CFE8D8; color:#1F7A4D;">Isolation Forest</span>
-              <span style="font-family:'JetBrains Mono',monospace; font-size:10.5px; font-weight:500; padding:2px 8px; border-radius:5px; background:#EAF5EE; border:1px solid #CFE8D8; color:#1F7A4D;">LSTM</span>
-              <span style="font-family:'JetBrains Mono',monospace; font-size:10.5px; font-weight:500; padding:2px 8px; border-radius:5px; background:#EAF5EE; border:1px solid #CFE8D8; color:#1F7A4D;">Docker</span>
-            </div>
-            <div style="display:flex; gap:0.85rem;">
-              <a href="https://github.com/imann128" target="_blank" rel="noopener" class="hov13">↗ GitHub</a>
-            </div>
-          </div>
-        </div>
-
-        <div style="border:1px solid #DCE5DA; background:#FFFFFF; border-radius:14px; overflow:hidden; box-shadow:0 1px 2px rgba(20,83,45,.04), 0 4px 16px rgba(20,83,45,.05); display:flex; flex-direction:column;">
-          <div style="background:#1E1E1E; display:flex; flex-direction:column;">
-            <div style="padding:8px 12px 6px; display:flex; align-items:center; gap:5px;"><div style="width:9px; height:9px; border-radius:50%; background:#FF5F57;"></div><div style="width:9px; height:9px; border-radius:50%; background:#FFBD2E;"></div><div style="width:9px; height:9px; border-radius:50%; background:#28CA42;"></div></div>
-            <img src="assets/34ccca79-610e-4862-b699-2a62c42960b3.png" alt="DevMetrics dashboard" style="width:100%; display:block; height:188px; object-fit:cover; object-position:top;">
-          </div>
-          <div style="padding:1.1rem 1.25rem 1.25rem; flex:1; display:flex; flex-direction:column;">
-            <div style="font-size:14.5px; font-weight:600; color:#142420; margin-bottom:0.4rem;">DevMetrics</div>
-            <div style="font-size:13px; color:#3A4F44; line-height:1.55; margin-bottom:0.9rem; flex:1;">Self-hosted Git activity monitor with closed-loop telemetry. Streams live commit data over SignalR, computes craftsmanship signals, and exposes a Prometheus-compatible <code>/metrics</code> endpoint for dashboards and alerting.</div>
-            <div style="display:flex; flex-wrap:wrap; gap:0.35rem; margin-bottom:0.9rem;">
-              <span style="font-family:'JetBrains Mono',monospace; font-size:10.5px; font-weight:500; padding:2px 8px; border-radius:5px; background:#EAF5EE; border:1px solid #CFE8D8; color:#1F7A4D;">.NET 8</span>
-              <span style="font-family:'JetBrains Mono',monospace; font-size:10.5px; font-weight:500; padding:2px 8px; border-radius:5px; background:#EAF5EE; border:1px solid #CFE8D8; color:#1F7A4D;">SignalR</span>
-              <span style="font-family:'JetBrains Mono',monospace; font-size:10.5px; font-weight:500; padding:2px 8px; border-radius:5px; background:#EAF5EE; border:1px solid #CFE8D8; color:#1F7A4D;">OpenAPI 3.0</span>
-              <span style="font-family:'JetBrains Mono',monospace; font-size:10.5px; font-weight:500; padding:2px 8px; border-radius:5px; background:#EAF5EE; border:1px solid #CFE8D8; color:#1F7A4D;">Prometheus</span>
-              <span style="font-family:'JetBrains Mono',monospace; font-size:10.5px; font-weight:500; padding:2px 8px; border-radius:5px; background:#EAF5EE; border:1px solid #CFE8D8; color:#1F7A4D;">Docker</span>
-            </div>
-            <div style="display:flex; gap:0.85rem;">
-              <a href="https://github.com/imann128/DevMetrics" target="_blank" rel="noopener" class="hov14">↗ GitHub</a>
-            </div>
-          </div>
-        </div>
-
-        <div style="border:1px solid #DCE5DA; background:#FFFFFF; border-radius:14px; overflow:hidden; box-shadow:0 1px 2px rgba(20,83,45,.04), 0 4px 16px rgba(20,83,45,.05); display:flex; flex-direction:column;">
-          <div style="background:#1E1E1E; display:flex; flex-direction:column;">
-            <div style="padding:8px 12px 6px; display:flex; align-items:center; gap:5px;"><div style="width:9px; height:9px; border-radius:50%; background:#FF5F57;"></div><div style="width:9px; height:9px; border-radius:50%; background:#FFBD2E;"></div><div style="width:9px; height:9px; border-radius:50%; background:#28CA42;"></div></div>
-            <img src="assets/ba348a5a-33f4-415c-8b9d-b50e7a4a4b99.png" alt="RelayCore dashboard" style="width:100%; display:block; height:188px; object-fit:cover; object-position:top;">
-          </div>
-          <div style="padding:1.1rem 1.25rem 1.25rem; flex:1; display:flex; flex-direction:column;">
-            <div style="font-size:14.5px; font-weight:600; color:#142420; margin-bottom:0.4rem;">RelayCore</div>
-            <div style="font-size:13px; color:#3A4F44; line-height:1.55; margin-bottom:0.9rem; flex:1;">Production webhook relay with at-least-once delivery, Redis-backed idempotent deduplication, JSONPath fan-out routing, HMAC-SHA256 verification, an SSRF guard, and a dead-letter queue for failed deliveries.</div>
-            <div style="display:flex; flex-wrap:wrap; gap:0.35rem; margin-bottom:0.9rem;">
-              <span style="font-family:'JetBrains Mono',monospace; font-size:10.5px; font-weight:500; padding:2px 8px; border-radius:5px; background:#EAF5EE; border:1px solid #CFE8D8; color:#1F7A4D;">Python</span>
-              <span style="font-family:'JetBrains Mono',monospace; font-size:10.5px; font-weight:500; padding:2px 8px; border-radius:5px; background:#EAF5EE; border:1px solid #CFE8D8; color:#1F7A4D;">Django</span>
-              <span style="font-family:'JetBrains Mono',monospace; font-size:10.5px; font-weight:500; padding:2px 8px; border-radius:5px; background:#EAF5EE; border:1px solid #CFE8D8; color:#1F7A4D;">Celery</span>
-              <span style="font-family:'JetBrains Mono',monospace; font-size:10.5px; font-weight:500; padding:2px 8px; border-radius:5px; background:#EAF5EE; border:1px solid #CFE8D8; color:#1F7A4D;">Redis</span>
-              <span style="font-family:'JetBrains Mono',monospace; font-size:10.5px; font-weight:500; padding:2px 8px; border-radius:5px; background:#EAF5EE; border:1px solid #CFE8D8; color:#1F7A4D;">Docker</span>
-            </div>
-            <div style="display:flex; gap:0.85rem;">
-              <a href="https://github.com/imann128/RelayCore" target="_blank" rel="noopener" class="hov15">↗ GitHub</a>
-            </div>
-          </div>
-        </div>
-
-        <div style="border:1px solid #DCE5DA; background:#FFFFFF; border-radius:14px; overflow:hidden; box-shadow:0 1px 2px rgba(20,83,45,.04), 0 4px 16px rgba(20,83,45,.05); display:flex; flex-direction:column; grid-column:1 / -1;">
-          <div style="background:#1E1E1E; display:flex; flex-direction:column;">
-            <div style="padding:8px 12px 6px; display:flex; align-items:center; gap:5px;"><div style="width:9px; height:9px; border-radius:50%; background:#FF5F57;"></div><div style="width:9px; height:9px; border-radius:50%; background:#FFBD2E;"></div><div style="width:9px; height:9px; border-radius:50%; background:#28CA42;"></div></div>
-            <img src="assets/f9d2abf2-6d50-4f81-a21e-3f379217af51.png" alt="A/B testing analytics dashboard" style="width:100%; display:block; height:188px; object-fit:cover; object-position:top;">
-          </div>
-          <div style="padding:1.1rem 1.25rem 1.25rem; flex:1; display:flex; flex-direction:column;">
-            <div style="font-size:14.5px; font-weight:600; color:#142420; margin-bottom:0.4rem;">Image-Generation Prompts, A/B Testing</div>
-            <div style="font-size:13px; color:#3A4F44; line-height:1.55; margin-bottom:0.9rem; flex:1;">Product-intelligence dashboard over 50K generation events, answering five business questions: which model ships, where latency costs retention, quality trends, optimal prompt length, and keyword-quality correlation.</div>
-            <div style="display:flex; flex-wrap:wrap; gap:0.35rem; margin-bottom:0.9rem;">
-              <span style="font-family:'JetBrains Mono',monospace; font-size:10.5px; font-weight:500; padding:2px 8px; border-radius:5px; background:#EAF5EE; border:1px solid #CFE8D8; color:#1F7A4D;">Python</span>
-              <span style="font-family:'JetBrains Mono',monospace; font-size:10.5px; font-weight:500; padding:2px 8px; border-radius:5px; background:#EAF5EE; border:1px solid #CFE8D8; color:#1F7A4D;">Streamlit</span>
-              <span style="font-family:'JetBrains Mono',monospace; font-size:10.5px; font-weight:500; padding:2px 8px; border-radius:5px; background:#EAF5EE; border:1px solid #CFE8D8; color:#1F7A4D;">Plotly</span>
-              <span style="font-family:'JetBrains Mono',monospace; font-size:10.5px; font-weight:500; padding:2px 8px; border-radius:5px; background:#EAF5EE; border:1px solid #CFE8D8; color:#1F7A4D;">scipy</span>
-              <span style="font-family:'JetBrains Mono',monospace; font-size:10.5px; font-weight:500; padding:2px 8px; border-radius:5px; background:#EAF5EE; border:1px solid #CFE8D8; color:#1F7A4D;">SQLite</span>
-            </div>
-            <div style="display:flex; gap:0.85rem;">
-              <a href="https://github.com/imann128/image-generation-A-B-testing" target="_blank" rel="noopener" class="hov16">↗ GitHub</a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-    
-    <section id="oss" style="margin-bottom:3rem;">
-      <div style="display:flex; align-items:center; gap:0.85rem; margin-bottom:1.5rem;">
-        <span style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:500; color:#1F7A4D; letter-spacing:0.12em; text-transform:uppercase; white-space:nowrap;">Open-Source Contributions</span>
-        <div style="flex:1; height:1px; background:#DCE5DA;"></div>
-      </div>
-      <div style="display:flex; flex-direction:column; gap:0.85rem;">
-        <div style="display:flex; align-items:flex-start; gap:1rem; padding:1.1rem 1.3rem; background:#FFFFFF; border:1px solid #DCE5DA; border-radius:12px;">
-          <span style="font-family:'JetBrains Mono',monospace; font-size:10px; font-weight:500; padding:5px 9px; background:#142420; color:#fff; border-radius:6px; white-space:nowrap; margin-top:1px;">statsmodels</span>
+        <div style="padding:16px 18px; display:flex; gap:14px; align-items:flex-start;">
+          <span style="font-family:'VT323',monospace; font-size:13px; padding:3px 9px; background:#123524; color:#9fe8b8; white-space:nowrap;">statsmodels</span>
           <div>
-            <div style="font-size:13.5px; font-weight:600; color:#142420; margin-bottom:3px;">Allow seasonal-differencing-only ARIMA models with non-seasonal estimators</div>
-            <div style="font-size:13px; color:#3A4F44;">Addresses Issue 6159, enables ARIMA configurations where seasonal differencing is applied without requiring seasonal AR/MA terms.</div>
-            <div style="display:flex; align-items:center; flex-wrap:wrap; gap:0.6rem; margin-top:8px;">
-              <span style="font-family:'JetBrains Mono',monospace; font-size:10px; font-weight:500; display:inline-flex; align-items:center; gap:5px; padding:3px 9px; border-radius:999px; background:#EAF5EE; color:#1F7A4D; border:1px solid #CFE8D8;">Merged into main</span>
-              <span style="font-family:'JetBrains Mono',monospace; font-size:10px; color:#6C8177;">PR 9811</span>
-            </div>
+            <div style="font-size:14px; font-weight:bold; margin-bottom:4px;">Allow seasonal-differencing-only ARIMA models with non-seasonal estimators</div>
+            <div style="font-size:13px; color:var(--muted);">Addresses Issue 6159: enables ARIMA configurations where seasonal differencing applies without seasonal AR/MA terms. Merged into main · PR 9811</div>
           </div>
         </div>
       </div>
-    </section>
-    
-    <section id="skills" style="margin-bottom:3rem;">
-      <div style="display:flex; align-items:center; gap:0.85rem; margin-bottom:1.5rem;">
-        <span style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:500; color:#1F7A4D; letter-spacing:0.12em; text-transform:uppercase; white-space:nowrap;">Skills</span>
-        <div style="flex:1; height:1px; background:#DCE5DA;"></div>
-      </div>
 
-      <div style="background:#FFFFFF; border:1px solid #DCE5DA; border-radius:12px; padding:1.4rem 1.6rem; margin-bottom:1.25rem;">
-        <div style="display:flex; height:12px; border-radius:999px; overflow:hidden; gap:2px; margin-bottom:1rem;">
-          <div style="width:42%; background:#3776AB;"></div>
-          <div style="width:26%; background:#1F7A4D;"></div>
-          <div style="width:20%; background:#5B9C6E;"></div>
-          <div style="width:12%; background:#8FBFA0;"></div>
+      <div id="c-skills" style="background:var(--win); box-shadow:0 0 0 1px #14251c; margin:20px 0;">
+        <div style="background:var(--bar); color:var(--bartext); display:flex; align-items:center; gap:8px; padding:5px 10px;">
+          <span style="width:11px; height:11px; background:var(--accent2); flex-shrink:0;"></span>
+          <span style="font-family:'VT323',monospace; font-size:16px; flex:1; min-width:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">skills.sys</span>
         </div>
-        <div style="display:flex; flex-wrap:wrap; gap:1.1rem;">
-          <span style="display:flex; align-items:center; gap:7px; font-size:12.5px; color:#3A4F44; font-weight:500;"><span style="width:11px; height:11px; border-radius:3px; background:#3776AB; display:inline-block;"></span> Python</span>
-          <span style="display:flex; align-items:center; gap:7px; font-size:12.5px; color:#3A4F44; font-weight:500;"><span style="width:11px; height:11px; border-radius:3px; background:#1F7A4D; display:inline-block;"></span> JavaScript / React</span>
-          <span style="display:flex; align-items:center; gap:7px; font-size:12.5px; color:#3A4F44; font-weight:500;"><span style="width:11px; height:11px; border-radius:3px; background:#5B9C6E; display:inline-block;"></span> C# / .NET</span>
-          <span style="display:flex; align-items:center; gap:7px; font-size:12.5px; color:#3A4F44; font-weight:500;"><span style="width:11px; height:11px; border-radius:3px; background:#8FBFA0; display:inline-block;"></span> Java</span>
-        </div>
-      </div>
-
-      <div style="display:grid; grid-template-columns:110px 1fr; gap:0.7rem 1.2rem; background:#FFFFFF; border:1px solid #DCE5DA; border-radius:12px; padding:1.4rem 1.6rem;">
-        <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:500; color:#6C8177; text-transform:uppercase; letter-spacing:0.05em; padding-top:2px;">Analytics</div>
-        <div style="font-size:13.5px; color:#3A4F44;">pandas, NumPy, scikit-learn, scipy, statsmodels, Plotly, Streamlit, Recharts, GARCH, Isolation Forest</div>
-        <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:500; color:#6C8177; text-transform:uppercase; letter-spacing:0.05em; padding-top:2px;">Backend</div>
-        <div style="font-size:13.5px; color:#3A4F44;">Django, Flask, .NET 8, SignalR, Celery, EF Core, OpenAPI 3.0 / Swagger</div>
-        <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:500; color:#6C8177; text-transform:uppercase; letter-spacing:0.05em; padding-top:2px;">Infra</div>
-        <div style="font-size:13.5px; color:#3A4F44;">Docker, Redis, Prometheus, PostgreSQL, MySQL, SQLite, GitHub Actions, PyPI packaging</div>
-        <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:500; color:#6C8177; text-transform:uppercase; letter-spacing:0.05em; padding-top:2px;">Writing</div>
-        <div style="font-size:13.5px; color:#3A4F44;">Technical blog posts, developer documentation, SEO, dev.to/imann_12</div>
-      </div>
-    </section>
-    <section id="next" style="margin-bottom:1rem;">
-      <div style="display:flex; align-items:center; gap:0.85rem; margin-bottom:1.5rem;">
-        <span style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:500; color:#1F7A4D; letter-spacing:0.12em; text-transform:uppercase; white-space:nowrap;">What's Next</span>
-        <div style="flex:1; height:1px; background:#DCE5DA;"></div>
-      </div>
-      <div style="background:linear-gradient(135deg, #123524 0%, #1F7A4D 100%); border-radius:18px; padding:2.2rem 2.2rem; color:#fff; box-shadow:0 1px 2px rgba(20,83,45,.04), 0 4px 16px rgba(20,83,45,.05);">
-        <div style="font-family:'JetBrains Mono',monospace; font-size:10.5px; letter-spacing:0.12em; text-transform:uppercase; color:#CFE8D8; margin-bottom:0.9rem;">Current focus</div>
-        <h2 style="font-family:'Noto Serif',serif; font-weight:500; font-size:1.7rem; line-height:1.12; margin:0 0 0.9rem;">Bringing data-integrity discipline to fintech</h2>
-        <p style="color:rgba(240,253,250,0.92); font-size:14.5px; max-width:660px; margin:0 0 0.8rem;">
-          I'm now working on fintech projects, where broken chronological continuity and subtle data leakage don't
-          just hurt accuracy, they produce backtests that lie. It's the natural next step from TSAuditor: applying
-          the same auditing rigour to financial time-series, market-data pipelines, and risk and trading analytics.
-        </p>
-        <p style="color:rgba(240,253,250,0.92); font-size:14.5px; max-width:660px; margin:0;">
-          The goal is reliable, reproducible pipelines where every model is trained on data that has been audited
-          before it's trusted.
-        </p>
-        <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1.4rem;">
-          <span style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:500; padding:4px 11px; border-radius:999px; background:rgba(255,255,255,0.13); color:#fff; border:1px solid rgba(255,255,255,0.22);">Financial time-series</span>
-          <span style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:500; padding:4px 11px; border-radius:999px; background:rgba(255,255,255,0.13); color:#fff; border:1px solid rgba(255,255,255,0.22);">Market-data pipelines</span>
-          <span style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:500; padding:4px 11px; border-radius:999px; background:rgba(255,255,255,0.13); color:#fff; border:1px solid rgba(255,255,255,0.22);">Risk &amp; trading analytics</span>
-          <span style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:500; padding:4px 11px; border-radius:999px; background:rgba(255,255,255,0.13); color:#fff; border:1px solid rgba(255,255,255,0.22);">Reproducible backtesting</span>
+        <div style="padding:18px;">
+          <div style="font-family:'VT323',monospace; font-size:15px; color:var(--muted); margin-bottom:8px;">LANGUAGE / STACK USAGE</div>
+          <div style="display:flex; flex-direction:column; gap:8px; margin-bottom:16px;">
+            <div style="display:flex; align-items:center; gap:10px;"><span style="width:130px; font-size:13px;">Python</span><div style="flex:1; height:14px; background:#dfe9e2; box-shadow:0 0 0 1px #14251c;"><div style="width:78%; height:100%; background:var(--accent);"></div></div></div>
+            <div style="display:flex; align-items:center; gap:10px;"><span style="width:130px; font-size:13px;">JavaScript / React</span><div style="flex:1; height:14px; background:#dfe9e2; box-shadow:0 0 0 1px #14251c;"><div style="width:60%; height:100%; background:var(--accent);"></div></div></div>
+            <div style="display:flex; align-items:center; gap:10px;"><span style="width:130px; font-size:13px;">C# / .NET</span><div style="flex:1; height:14px; background:#dfe9e2; box-shadow:0 0 0 1px #14251c;"><div style="width:48%; height:100%; background:var(--accent);"></div></div></div>
+            <div style="display:flex; align-items:center; gap:10px;"><span style="width:130px; font-size:13px;">Java</span><div style="flex:1; height:14px; background:#dfe9e2; box-shadow:0 0 0 1px #14251c;"><div style="width:30%; height:100%; background:var(--accent);"></div></div></div>
+          </div>
+          <div style="display:grid; grid-template-columns:110px 1fr; gap:8px 14px; font-size:13.5px;">
+            <div style="font-family:'VT323',monospace; color:var(--muted);">ANALYTICS</div><div>pandas, NumPy, scikit-learn, scipy, statsmodels, Plotly, Streamlit, Recharts, GARCH, Isolation Forest</div>
+            <div style="font-family:'VT323',monospace; color:var(--muted);">BACKEND</div><div>Django, Flask, .NET 8, SignalR, Celery, EF Core, OpenAPI 3.0</div>
+            <div style="font-family:'VT323',monospace; color:var(--muted);">INFRA</div><div>Docker, Redis, Prometheus, PostgreSQL, MySQL, SQLite, GitHub Actions, PyPI packaging</div>
+            <div style="font-family:'VT323',monospace; color:var(--muted);">WRITING</div><div>Technical blog posts, developer docs, dev.to/imann_12</div>
+          </div>
         </div>
       </div>
-    </section>
 
-  </main>
+      <div id="c-next" style="background:var(--win); box-shadow:0 0 0 1px #14251c; margin:20px 0 10px; max-width:560px;">
+        <div style="background:var(--bar); color:var(--bartext); display:flex; align-items:center; gap:8px; padding:5px 10px;">
+          <span style="width:11px; height:11px; background:var(--accent2); flex-shrink:0;"></span>
+          <span style="font-family:'VT323',monospace; font-size:16px; flex:1; min-width:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">next.exe</span>
+        </div>
+        <div style="padding:16px;">
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <span style="width:34px; height:34px; border-radius:50%; background:var(--accent); color:#fff; font-family:'VT323',monospace; font-size:22px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">i</span>
+            <div>
+              <div style="font-weight:bold; font-size:14.5px; margin-bottom:6px;">Currently: bringing data-integrity discipline to fintech</div>
+              <p style="font-size:13.5px; line-height:1.6; margin:0 0 10px;">Now applying that same discipline to fintech, where broken chronological continuity and subtle leakage don't just hurt accuracy, so they produce backtests that lie. Building reproducible pipelines for financial time-series, market-data ingestion, and risk &amp; trading analytics, where every model trains on data that's been audited first.</p>
+            </div>
+          </div>
+          <div style="display:flex; justify-content:flex-end; gap:8px; margin-top:8px;">
+            <span style="font-family:'VT323',monospace; font-size:15px; padding:5px 18px; background:#dfe9e2; box-shadow:0 0 0 1px #14251c;">OK</span>
+          </div>
+        </div>
+      </div>
 
-  <footer style="border-top:1px solid #DCE5DA; padding:2.25rem; text-align:center; font-size:12.5px; color:#6C8177;">
-    <p>Iman Naeem, NUST SEECS, Islamabad,
-      <a href="https://github.com/imann128" target="_blank" rel="noopener" class="hov17">GitHub</a>,
-      <a href="https://dev.to/imann_12" target="_blank" rel="noopener" class="hov18">dev.to</a>
-    </p>
-  </footer>
+    </div>
+  </div>
+</section>
 </div>
 
+<script>
+(function () {
+  var content = document.getElementById('portfolio-content');
+  var launchers = document.querySelectorAll('.portfolio-launcher');
+  var navLinks = document.querySelectorAll('a[href^="#c-"]');
+  var opened = false;
 
+  function reveal() {
+    if (opened) return;
+    opened = true;
+    launchers.forEach(function (el) { el.classList.add('opened'); });
+    content.classList.add('open');
+    content.style.maxHeight = content.scrollHeight + 'px';
+    content.addEventListener('transitionend', function done(e) {
+      if (e.propertyName === 'max-height') {
+        content.style.maxHeight = 'none';
+        content.removeEventListener('transitionend', done);
+      }
+    });
+  }
+
+  function revealThenScroll(targetId) {
+    var wasOpen = opened;
+    reveal();
+    var delay = wasOpen ? 0 : 450;
+    setTimeout(function () {
+      var el = document.getElementById(targetId);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, delay);
+  }
+
+  launchers.forEach(function (el) {
+    el.addEventListener('click', function (e) {
+      e.preventDefault();
+      revealThenScroll('portfolio-content');
+    });
+  });
+
+  navLinks.forEach(function (el) {
+    el.addEventListener('click', function (e) {
+      e.preventDefault();
+      revealThenScroll(el.getAttribute('href').slice(1));
+    });
+  });
+
+  window.addEventListener('resize', function () {
+    if (opened) content.style.maxHeight = 'none';
+  });
+})();
+</script>
 </body></html>
