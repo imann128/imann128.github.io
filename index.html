@@ -324,18 +324,29 @@
         </div>
       </div>
 
-      <div id="c-ts" style="background:var(--win); box-shadow:0 0 0 1px #14251c; margin:20px 0;">
+      <div id="c-ts" style="background:var(--win); box-shadow:0 0 0 2px var(--accent), 3px 3px 0 rgba(0,0,0,0.25); margin:24px 0;">
         <div style="background:var(--bar); color:var(--bartext); display:flex; align-items:center; gap:8px; padding:5px 10px;">
           <span style="width:11px; height:11px; background:var(--accent2); flex-shrink:0;"></span>
           <span style="font-family:'VT323',monospace; font-size:16px; flex:1; min-width:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">TSAuditor.exe · Featured Release</span>
         </div>
-        <div style="padding:18px;">
-          <div style="display:inline-block; font-family:'VT323',monospace; font-size:14px; background:#123524; color:#9fe8b8; padding:3px 10px; margin-bottom:10px;">● tsauditor 0.2.0 · the data guard release · live on PyPI</div>
+        <div style="padding:20px;">
+          <div style="display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; margin-bottom:8px;">
+            <span style="font-family:'Press Start 2P',monospace; font-size:17px; color:var(--accent);">TSAuditor</span>
+            <span style="font-family:'VT323',monospace; font-size:15px; color:var(--muted);">time-series data-quality auditor · on PyPI</span>
+          </div>
+          <div style="display:inline-block; font-family:'VT323',monospace; font-size:15px; background:#123524; color:#9fe8b8; padding:4px 12px; margin-bottom:12px;">● tsauditor 0.1.2 · beta · live on PyPI</div>
           <p style="font-size:14.5px; line-height:1.6; margin:0 0 12px;">
-            A major, fully backward-compatible feature release. TSAuditor moves from a leakage detector to a complete
-            data guard: it catches point-in-time and validity flaws, repairs them on a copy, scores data health, and exports
-            audit-ready reports, so nothing gets modeled until it's been checked.
+            Most profiling tools treat rows as independent and miss what actually breaks time-series models: irregular
+            timestamp frequency, non-stationarity, and features that quietly leak the future into the past. TSAuditor
+            scans a DataFrame for exactly those problems, scores overall data health, and exports an audit-ready report,
+            so nothing gets modeled until it's been checked.
           </p>
+          <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px;">
+            <span style="font-family:'VT323',monospace; font-size:14px; padding:4px 10px; background:#dfe9e2; box-shadow:0 0 0 1px #14251c;">leakage detection</span>
+            <span style="font-family:'VT323',monospace; font-size:14px; padding:4px 10px; background:#dfe9e2; box-shadow:0 0 0 1px #14251c;">structural profiling</span>
+            <span style="font-family:'VT323',monospace; font-size:14px; padding:4px 10px; background:#dfe9e2; box-shadow:0 0 0 1px #14251c;">anomaly checks</span>
+            <span style="font-family:'VT323',monospace; font-size:14px; padding:4px 10px; background:#dfe9e2; box-shadow:0 0 0 1px #14251c;">data health report</span>
+          </div>
           <p style="font-style:italic; font-size:13px; color:var(--muted); margin-bottom:12px;">Featured in Data Science Weekly, Substack Issue 657, plus mentions across numerous tech blogs.</p>
           <div style="background:#123524; color:#9fe8b8; font-family:'VT323',monospace; font-size:16px; padding:10px 14px; box-shadow:0 0 0 1px #14251c; margin-bottom:12px;">$ pip install tsauditor</div>
           <div style="display:flex; gap:8px; flex-wrap:wrap;">
@@ -411,16 +422,24 @@
         </div>
       </div>
 
-      <div id="c-oss" style="background:var(--win); box-shadow:0 0 0 1px #14251c; margin:20px 0;">
+      <div id="c-oss" style="background:var(--win); box-shadow:0 0 0 2px var(--accent), 3px 3px 0 rgba(0,0,0,0.25); margin:24px 0;">
         <div style="background:var(--bar); color:var(--bartext); display:flex; align-items:center; gap:8px; padding:5px 10px;">
           <span style="width:11px; height:11px; background:var(--accent2); flex-shrink:0;"></span>
           <span style="font-family:'VT323',monospace; font-size:16px; flex:1; min-width:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">open_source.log</span>
         </div>
-        <div style="padding:16px 18px; display:flex; gap:14px; align-items:flex-start;">
-          <span style="font-family:'VT323',monospace; font-size:13px; padding:3px 9px; background:#123524; color:#9fe8b8; white-space:nowrap;">statsmodels</span>
-          <div>
-            <div style="font-size:14px; font-weight:bold; margin-bottom:4px;">Allow seasonal-differencing-only ARIMA models with non-seasonal estimators</div>
-            <div style="font-size:13px; color:var(--muted);">Addresses Issue 6159: enables ARIMA configurations where seasonal differencing applies without seasonal AR/MA terms. Merged into main · PR 9811</div>
+        <div style="padding:20px;">
+          <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-bottom:10px;">
+            <span style="font-family:'VT323',monospace; font-size:14px; padding:3px 10px; background:#123524; color:#9fe8b8;">statsmodels</span>
+            <span style="font-family:'VT323',monospace; font-size:14px; padding:3px 10px; background:var(--accent); color:#fff;">● MERGED · PR #9811</span>
+          </div>
+          <div style="font-size:15.5px; font-weight:bold; margin-bottom:6px;">Allow seasonal-differencing-only ARIMA models with non-seasonal estimators</div>
+          <p style="font-size:13.5px; line-height:1.6; color:var(--muted); margin:0 0 10px;">
+            Issue 6159 sat open since 2021. A restriction in statsmodels blocked ARIMA configurations that applied
+            seasonal differencing without also requiring seasonal AR/MA terms. I traced it into the Hannan-Rissanen
+            estimator, fixed the underlying constraint, and got it merged into main.
+          </p>
+          <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            <a href="https://github.com/statsmodels/statsmodels/pull/9811" target="_blank" rel="noopener" style="font-family:'VT323',monospace; font-size:15px; padding:5px 12px; background:#dfe9e2; box-shadow:0 0 0 1px #14251c; color:var(--wintext); text-decoration:none;">↗ View PR #9811</a>
           </div>
         </div>
       </div>
