@@ -126,6 +126,37 @@
     transition: max-height .6s ease, opacity .5s ease;
   }
   #portfolio-content.open { opacity: 1; }
+
+  /* Retro "photo viewer" carousel: same window-chrome language as the
+     rest of the page (title bar, hard box-shadow border), pure CSS
+     transform + a small vanilla-JS controller, no library. */
+  .gallery { background: var(--win); box-shadow: 0 0 0 1px #14251c, 3px 3px 0 rgba(0,0,0,0.25); }
+  .gallery-bar {
+    background: var(--bar); color: var(--bartext); display: flex; align-items: center; gap: 8px;
+    padding: 5px 10px; font-family: 'VT323', monospace; font-size: 15px;
+  }
+  .gallery-bar .dot { width: 10px; height: 10px; background: var(--accent2); flex-shrink: 0; }
+  .gallery-bar .name { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .gallery-bar .count { color: #9fd9b4; flex-shrink: 0; }
+  .gallery-frame { position: relative; overflow: hidden; background: var(--desktop); box-shadow: inset 0 0 0 1px #14251c; aspect-ratio: 4 / 3; }
+  .gallery-track { display: flex; height: 100%; transition: transform .35s ease; }
+  .gallery-slide { flex: 0 0 100%; height: 100%; position: relative; }
+  .gallery-slide img { width: 100%; height: 100%; display: block; object-fit: cover; }
+  .gallery-caption {
+    position: absolute; left: 0; right: 0; bottom: 0; background: rgba(20,37,28,0.82); color: #eafaf0;
+    font-family: 'VT323', monospace; font-size: 14px; padding: 5px 10px;
+  }
+  .gallery-nav {
+    position: absolute; top: 50%; transform: translateY(-50%); width: 30px; height: 30px;
+    background: #f4f8f0; box-shadow: 0 0 0 1px #14251c; color: #1b2a20; border: none; cursor: pointer;
+    font-family: 'VT323', monospace; font-size: 17px; line-height: 1; padding: 0; opacity: .88;
+  }
+  .gallery-nav:hover { opacity: 1; background: var(--accent2); color: #fff; }
+  .gallery-prev { left: 8px; }
+  .gallery-next { right: 8px; }
+  .gallery-dots { display: flex; gap: 6px; justify-content: center; padding: 10px; }
+  .gallery-dot { width: 9px; height: 9px; background: var(--win); box-shadow: 0 0 0 1px #14251c; cursor: pointer; padding: 0; border: none; }
+  .gallery-dot.active { background: var(--accent); }
 </style>
 </head>
 <body>
@@ -400,11 +431,23 @@
               <span>ROC-AUC <strong style="color:var(--wintext);">0.934</strong></span>
               <span>Validation accuracy <strong style="color:var(--wintext);">86.7%</strong></span>
             </div>
-            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:8px;">
-              <img src="assets/haven-1.png" alt="Haven caregiver sign-in" loading="lazy" style="width:100%; height:auto; display:block; box-shadow:0 0 0 1px #14251c;">
-              <img src="assets/haven-2.png" alt="Haven dashboard" loading="lazy" style="width:100%; height:auto; display:block; box-shadow:0 0 0 1px #14251c;">
-              <img src="assets/haven-3.png" alt="Haven incident detail" loading="lazy" style="width:100%; height:auto; display:block; box-shadow:0 0 0 1px #14251c;">
-              <img src="assets/haven-4.png" alt="Haven alerts panel" loading="lazy" style="width:100%; height:auto; display:block; box-shadow:0 0 0 1px #14251c;">
+            <div class="gallery" data-gallery style="max-width:480px;">
+              <div class="gallery-bar">
+                <span class="dot"></span>
+                <span class="name">haven_screens.gallery</span>
+                <span class="count" data-count>1 / 4</span>
+              </div>
+              <div class="gallery-frame">
+                <div class="gallery-track" data-track>
+                  <div class="gallery-slide"><img src="assets/haven-1.png" alt="Haven caregiver sign-in" loading="lazy"><span class="gallery-caption">Caregiver sign-in</span></div>
+                  <div class="gallery-slide"><img src="assets/haven-2.png" alt="Haven dashboard" loading="lazy"><span class="gallery-caption">Live dashboard</span></div>
+                  <div class="gallery-slide"><img src="assets/haven-3.png" alt="Haven incident detail" loading="lazy"><span class="gallery-caption">Incident detail</span></div>
+                  <div class="gallery-slide"><img src="assets/haven-4.png" alt="Haven alerts panel" loading="lazy"><span class="gallery-caption">Alerts &amp; notifications</span></div>
+                </div>
+                <button type="button" class="gallery-nav gallery-prev" data-prev aria-label="Previous screenshot">‹</button>
+                <button type="button" class="gallery-nav gallery-next" data-next aria-label="Next screenshot">›</button>
+              </div>
+              <div class="gallery-dots" data-dots></div>
             </div>
           </div>
 
@@ -430,11 +473,23 @@
               <span style="font-family:'VT323',monospace; font-size:14px; padding:4px 10px; background:#dfe9e2; box-shadow:0 0 0 1px #14251c;">Groq (AI assistant)</span>
               <span style="font-family:'VT323',monospace; font-size:14px; padding:4px 10px; background:#dfe9e2; box-shadow:0 0 0 1px #14251c;">AWS EC2/Nginx</span>
             </div>
-            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:8px; margin-bottom:14px;">
-              <img src="assets/internhub-1.png" alt="InternHub sign-in" loading="lazy" style="width:100%; height:auto; display:block; box-shadow:0 0 0 1px #14251c;">
-              <img src="assets/internhub-2.png" alt="InternHub admin dashboard" loading="lazy" style="width:100%; height:auto; display:block; box-shadow:0 0 0 1px #14251c;">
-              <img src="assets/internhub-3.png" alt="InternHub team chat" loading="lazy" style="width:100%; height:auto; display:block; box-shadow:0 0 0 1px #14251c;">
-              <img src="assets/internhub-4.png" alt="InternHub intern dashboard" loading="lazy" style="width:100%; height:auto; display:block; box-shadow:0 0 0 1px #14251c;">
+            <div class="gallery" data-gallery style="max-width:480px; margin-bottom:14px;">
+              <div class="gallery-bar">
+                <span class="dot"></span>
+                <span class="name">internhub_screens.gallery</span>
+                <span class="count" data-count>1 / 4</span>
+              </div>
+              <div class="gallery-frame">
+                <div class="gallery-track" data-track>
+                  <div class="gallery-slide"><img src="assets/internhub-1.png" alt="InternHub sign-in" loading="lazy"><span class="gallery-caption">Sign-in</span></div>
+                  <div class="gallery-slide"><img src="assets/internhub-2.png" alt="InternHub admin dashboard" loading="lazy"><span class="gallery-caption">Admin dashboard</span></div>
+                  <div class="gallery-slide"><img src="assets/internhub-3.png" alt="InternHub team chat" loading="lazy"><span class="gallery-caption">Team chat</span></div>
+                  <div class="gallery-slide"><img src="assets/internhub-4.png" alt="InternHub intern dashboard" loading="lazy"><span class="gallery-caption">Intern dashboard</span></div>
+                </div>
+                <button type="button" class="gallery-nav gallery-prev" data-prev aria-label="Previous screenshot">‹</button>
+                <button type="button" class="gallery-nav gallery-next" data-next aria-label="Next screenshot">›</button>
+              </div>
+              <div class="gallery-dots" data-dots></div>
             </div>
             <div style="display:flex; gap:8px; flex-wrap:wrap;">
               <a href="https://interns.medwalee.com" target="_blank" rel="noopener" style="font-family:'VT323',monospace; font-size:15px; padding:5px 12px; background:#dfe9e2; box-shadow:0 0 0 1px #14251c; color:var(--wintext); text-decoration:none;">↗ Live Demo</a>
@@ -709,6 +764,38 @@
 
   window.addEventListener('resize', function () {
     if (opened) content.style.maxHeight = 'none';
+  });
+})();
+
+(function () {
+  document.querySelectorAll('[data-gallery]').forEach(function (gallery) {
+    var track = gallery.querySelector('[data-track]');
+    var slides = gallery.querySelectorAll('.gallery-slide');
+    var dotsWrap = gallery.querySelector('[data-dots]');
+    var countEl = gallery.querySelector('[data-count]');
+    var total = slides.length;
+    var index = 0;
+
+    slides.forEach(function (_, i) {
+      var dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = 'gallery-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Go to screenshot ' + (i + 1));
+      dot.addEventListener('click', function () { goTo(i); });
+      dotsWrap.appendChild(dot);
+    });
+    var dots = gallery.querySelectorAll('.gallery-dot');
+
+    function render() {
+      track.style.transform = 'translateX(-' + (index * 100) + '%)';
+      dots.forEach(function (d, i) { d.classList.toggle('active', i === index); });
+      if (countEl) countEl.textContent = (index + 1) + ' / ' + total;
+    }
+    function goTo(i) { index = (i + total) % total; render(); }
+
+    gallery.querySelector('[data-prev]').addEventListener('click', function () { goTo(index - 1); });
+    gallery.querySelector('[data-next]').addEventListener('click', function () { goTo(index + 1); });
+    render();
   });
 })();
 </script>
